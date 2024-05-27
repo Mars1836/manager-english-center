@@ -5,7 +5,7 @@ const dev = {
   mongodb: {
     host: process.env.DEV_DB_HOST || "localhost",
     port: process.env.DEV_DB_PORT || "27017",
-    name: process.env.DEV_DB_NAME || "shopDEV",
+    name: process.env.DEV_DB_NAME || "englishCenterDEV",
   },
 };
 const pro = {
@@ -15,7 +15,7 @@ const pro = {
   mongodb: {
     host: process.env.PRO_DB_HOST || "mongodb-myapp",
     port: process.env.PRO_DB_PORT || "27017",
-    name: process.env.PRO_DB_NAME || "shopPRO",
+    name: process.env.PRO_DB_NAME || "englishCenterPRO",
   },
 };
 const docker = {
@@ -25,7 +25,7 @@ const docker = {
   mongodb: {
     host: process.env.PRO_DB_HOST || "mongo",
     port: process.env.PRO_DB_PORT || "27017",
-    name: process.env.PRO_DB_NAME || "shopDEV",
+    name: process.env.PRO_DB_NAME || "englishCenterDEV",
   },
 };
 const config = {

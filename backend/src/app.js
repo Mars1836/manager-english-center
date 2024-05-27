@@ -1,7 +1,8 @@
 const express = require("express");
 const morgan = require("morgan");
 const helmet = require("helmet");
-require("../dbs/mongodb.connect");
+const router = require("./routes");
+require("./dbs/mongodb.connect");
 const app = express();
 const port = 3000;
 app.use(morgan("dev"));
@@ -16,4 +17,5 @@ app.use(
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+app.use("/", router);
 module.exports = app;
