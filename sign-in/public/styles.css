@@ -15,7 +15,7 @@ h1 {
   /* set the font weight */
   font-weight: 1500;
   /* set the text color */
-  color: #93a2f7;
+  color: #ec8e11;
   /* set the text shadow */
   text-shadow: 1px 1px 0px #777777;
   /* set the padding */
@@ -110,7 +110,7 @@ body {
 .form-wrap form .button {
   width: 100%;
   padding: 0.8em 0 10px 0.8em;
-  background-color: #606ff0;
+  background-color: #957203;
   border: none;
   color: #fff;
   cursor: pointer;
