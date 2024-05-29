@@ -16,6 +16,7 @@ class MongooDB {
       .catch((err) => {
         console.log("Error Connect: " + err);
       });
+    mongoose.set("debug", true);
   }
   async createInstance() {
     if (!this.instance) {

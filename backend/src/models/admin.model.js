@@ -7,6 +7,10 @@ var adminSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
+    },
+    accountId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
       unique: true,
     },
   },
