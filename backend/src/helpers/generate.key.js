@@ -4,7 +4,8 @@ const { generateKeyPairSync, createSecretKey } = require("node:crypto");
 //     const
 // }
 function createTokenV1(_id) {
-  const key = createKey(_id);
+  // const key = createKey(_id);
+  const key = "asdasd";
   const accessToken = jwt.sign(
     {
       _id,
@@ -12,14 +13,14 @@ function createTokenV1(_id) {
     key,
     { expiresIn: "10d" }
   );
-  const refresshToken = jwt.sign(
+  const refreshToken = jwt.sign(
     {
       _id,
     },
     key,
     { expiresIn: "30d" }
   );
-  return { accessToken, refresshToken, key };
+  return { accessToken, refreshToken, key };
 }
 function createKey(_id) {
   return createSecretKey(_id, "hex");

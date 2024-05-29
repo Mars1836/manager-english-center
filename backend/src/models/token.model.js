@@ -5,7 +5,7 @@ const DOCUMENT_NAME = "token";
 var tokenSchema = new mongoose.Schema(
   {
     objectId: {
-      type: ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
     },
     role: {

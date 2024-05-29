@@ -30,5 +30,9 @@ class StudentService {
     });
     return student;
   }
+  static async getInfor({ id }) {
+    const student = await studentModel.findOne({ _id: id });
+    return student;
+  }
 }
 module.exports = StudentService;
