@@ -16,10 +16,6 @@ var accountSchema = new mongoose.Schema(
       ],
       default: [],
     },
-    password: {
-      type: String,
-      required: true,
-    },
     email: {
       type: String,
       required: true,
@@ -29,6 +25,10 @@ var accountSchema = new mongoose.Schema(
       type: String,
       required: true,
       enum: ["student", "parent", "admin"],
+    },
+    teacherId: {
+      type: String,
+      required: true,
     },
   },
   {
