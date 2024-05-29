@@ -1,5 +1,5 @@
 class SuccessRespone {
-  constructor(message, metadata, status = 200) {
+  constructor({ message, metadata, status = 200 }) {
     this.message = message;
     this.metadata = metadata;
     this.status = status;

@@ -9,9 +9,9 @@ class StudentCtrl {
       { name, _id, age },
       req.query
     );
-
+    // res.json(students);
     return new SuccessRespone({
-      message: "Get students success!",
+      message: "Get student",
       metadata: students,
     }).send(res);
   }
