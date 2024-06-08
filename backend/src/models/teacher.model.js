@@ -1,13 +1,17 @@
 const mongoose = require("mongoose"); // Erase if already required
-const COLLECTION_NAME = "Students";
-const DOCUMENT_NAME = "student";
+const COLLECTION_NAME = "Teachers";
+const DOCUMENT_NAME = "teacher";
 // Declare the Schema of the Mongo model
-var studentSchema = new mongoose.Schema(
+var teacherScheme = new mongoose.Schema(
   {
     name: {
       type: String,
       required: true,
     },
+    // classes: {
+    //   type: Array,
+    //   default: [],
+    // },
     accountId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
@@ -29,4 +33,4 @@ var studentSchema = new mongoose.Schema(
 );
 
 //Export the model
-module.exports = mongoose.model(DOCUMENT_NAME, studentSchema);
+module.exports = mongoose.model(DOCUMENT_NAME, teacherScheme);

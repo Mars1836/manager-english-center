@@ -18,6 +18,21 @@ class AccessCtrl {
       metadata,
     }).send(res);
   }
+  static async teacherSignUp(req, res, next) {
+    const metadata = await AccessService.teacherSignUp(req.body);
+    return new CreateSuccess({
+      message: "Sign up teacher success",
+      metadata,
+    }).send(res);
+  }
+
+  static async parentSignUp(req, res, next) {
+    const metadata = await AccessService.parentSignUp(req.body);
+    return new CreateSuccess({
+      message: "Sign up parent success",
+      metadata,
+    }).send(res);
+  }
   static async studentLogin(req, res, next) {
     const metadata = await AccessService.studentLogin(req.body);
     return new CreateSuccess({
@@ -29,6 +44,20 @@ class AccessCtrl {
     const metadata = await AccessService.adminLogin(req.body);
     return new CreateSuccess({
       message: "Admin login success",
+      metadata,
+    }).send(res);
+  }
+  static async teacherLogin(req, res, next) {
+    const metadata = await AccessService.teacherLogin(req.body);
+    return new CreateSuccess({
+      message: "Teacher login success",
+      metadata,
+    }).send(res);
+  }
+  static async parentLogin(req, res, next) {
+    const metadata = await AccessService.parentLogin(req.body);
+    return new CreateSuccess({
+      message: "Parent login success",
       metadata,
     }).send(res);
   }

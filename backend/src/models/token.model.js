@@ -10,7 +10,7 @@ var tokenSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["student", "parent", "admin"],
+      enum: ["student", "parent", "admin", "teacher"],
       required: true,
     },
     key: {
