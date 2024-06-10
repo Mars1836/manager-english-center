@@ -17,5 +17,15 @@ class ClassCtrl {
       metadata,
     }).send(res);
   }
+  static async studentEnroll(req, res, next) {
+    const metadata = await ClassService.studentEnroll(
+      { studentId: req.auth.student.id },
+      req.body
+    );
+    return new CreateSuccess({
+      message: "Enroll class successfull.",
+      metadata,
+    }).send(res);
+  }
 }
 module.exports = ClassCtrl;

@@ -16,6 +16,11 @@ var classSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    students: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "student",
+      default: [],
+    },
   },
   {
     collection: COLLECTION_NAME,

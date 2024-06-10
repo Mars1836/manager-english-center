@@ -36,5 +36,23 @@ class ClassService {
       .lean();
     return classes;
   }
+  static async studentEnroll({ studentId }, { classId }) {
+    const query = {
+      _id: classId,
+    };
+    const update = {
+      $addToSet: {
+        students: studentId,
+      },
+    };
+    const option = {
+      new: true,
+    };
+    const nClass = await classModel.findOneAndUpdate(query, update, option);
+    if (!nClass) {
+      throw new BadRequestError("Enroll class failed!");
+    }
+    return nClass;
+  }
 }
 module.exports = ClassService;
