@@ -1,29 +1,28 @@
 const { SuccessRespone } = require("../core/success.reponse");
 const { createToken } = require("../helpers/generate.key");
-const StudentService = require("../services/student.service");
-
-class StudentCtrl {
+const ParentService = require("../services/parent.service");
+class ParentCtrl {
   static async findByQuery(req, res, next) {
     const { name, _id, age } = req.query;
-    const students = await StudentService.findByQuery(
+    const parents = await ParentService.findByQuery(
       { name, _id, age },
       req.query
     );
-    // res.json(students);
+    // res.json(parents);
     return new SuccessRespone({
-      message: "Get student",
-      metadata: students,
+      message: "Get parents",
+      metadata: parents,
     }).send(res);
   }
   static async getInfor(req, res, next) {
-    if (!req?.auth?.student) {
-      return new Error("aaaaaaaaaaaaaaaaa");
+    if (!req?.auth?.teacher) {
+      return new Error("This requess requires authentication");
     }
-    const student = await StudentService.getInfor({ id: req.auth.student.id });
+    const student = await ParentService.getInfor({ id: req.auth.student.id });
     return new SuccessRespone({
       message: "Get infor success!",
       metadata: student,
     }).send(res);
   }
 }
-module.exports = StudentCtrl;
+module.exports = ParentCtrl;

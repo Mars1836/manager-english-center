@@ -1,27 +1,27 @@
-const parentModel = require("../models/parent.model");
+const teacherModel = require("../models/teacher.model");
 const { removeUnvalueField } = require("../utils");
 
-class ParentService {
+class TeacherService {
   static async findAll() {
-    const parents = await parentModel.find();
-    return parents;
+    const teachers = await teacherModel.find();
+    return teachers;
   }
   static async findById(id) {
-    const parent = await parentModel.findOne({
+    const student = await teacherModel.findOne({
       _id: id,
     });
-    return parent;
+    return student;
   }
   static async findByQuery(query = {}, options) {
     removeUnvalueField(query);
     console.log(query);
-    const parents = await parentModel.find({
+    const teachers = await teacherModel.find({
       ...query,
     });
-    return parents;
+    return teachers;
   }
   static async create({ name, accountId, dob, gender }) {
-    const teacher = await parentModel.create({
+    const teacher = await teacherModel.create({
       name,
       accountId,
       dob,
@@ -30,8 +30,8 @@ class ParentService {
     return teacher;
   }
   static async getInfor({ id }) {
-    const teacher = await parentModel.findOne({ _id: id });
+    const teacher = await teacherModel.findOne({ _id: id });
     return teacher;
   }
 }
-module.exports = ParentService;
+module.exports = TeacherService;
