@@ -10,7 +10,7 @@ class ClassService {
     const lessonData = lessons.map((i) => {
       const { date, topic, teacherId } = i;
       return {
-        // date,
+        date,
         topic,
         teacherId,
         classId: _class._id,
@@ -23,7 +23,25 @@ class ClassService {
 
     return { ..._class._doc, lessons: lessonRs };
   }
-
+  static async addLesson({ classId, topic, date, teacherId }) {
+    const _class = await classModel.findById(classId);
+    if (!_class) {
+      throw new BadRequestError("Class provided does not exist");
+    }
+    const lesson = await lessonModel.create({
+      classId,
+      topic,
+      date,
+      teacherId,
+    });
+    return lesson;
+  }
+  static async findLessonsByClass({ classId }) {
+    const lessons = await lessonModel.find({
+      classId,
+    });
+    return lessons;
+  }
   static async findAll() {
     const classes = await classModel
       .find()

@@ -10,10 +10,24 @@ class ClassCtrl {
     }).send(res);
   }
   static async findByQuery() {}
+  static async findLessonsByClass(req, res, next) {
+    const metadata = await ClassService.findLessonsByClass(req.body);
+    return new SuccessRespone({
+      message: "Get all lessons success",
+      metadata,
+    }).send(res);
+  }
   static async create(req, res, next) {
     const metadata = await ClassService.create(req.body);
     return new CreateSuccess({
       message: "Create new class successful.",
+      metadata,
+    }).send(res);
+  }
+  static async addLesson(req, res, next) {
+    const metadata = await ClassService.addLesson(req.body);
+    return new CreateSuccess({
+      message: "Add lesson successful",
       metadata,
     }).send(res);
   }
