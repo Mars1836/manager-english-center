@@ -7,11 +7,19 @@ var parentSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
+    },
+    accountId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
       unique: true,
     },
-    studentIds: {
-      type: Array,
-      unique: true,
+    dob: {
+      type: Date,
+    },
+    gender: {
+      type: String,
+      enum: ["male", "female"],
+      required: true,
     },
   },
   {

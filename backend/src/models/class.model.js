@@ -1,34 +1,25 @@
 const mongoose = require("mongoose"); // Erase if already required
-const COLLECTION_NAME = "Accounts";
-const DOCUMENT_NAME = "account";
+const COLLECTION_NAME = "Classes";
+const DOCUMENT_NAME = "class";
 // Declare the Schema of the Mongo model
-var accountSchema = new mongoose.Schema(
+var classSchema = new mongoose.Schema(
   {
-    lessons: {
-      type: [
-        {
-          date: Date,
-          topic: String,
-          teacherId: mongoose.Schema.Types.ObjectId,
-          isFinished: boolean,
-          attendance: [studentId],
-        },
-      ],
+    name: {
+      type: String,
+      required: true,
+    },
+    year: {
+      type: Number,
+      required: true,
+    },
+    grade: {
+      type: Number,
+      required: true,
+    },
+    students: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "student",
       default: [],
-    },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-    },
-    role: {
-      type: String,
-      required: true,
-      enum: ["student", "parent", "admin"],
-    },
-    teacherId: {
-      type: String,
-      required: true,
     },
   },
   {
@@ -36,6 +27,13 @@ var accountSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+classSchema.virtual("lesson", {
+  ref: "lesson",
+  localField: "_id",
+  foreignField: "classId",
+});
 
+classSchema.set("toObject", { virtuals: true });
+classSchema.set("toJSON", { virtuals: true });
 //Export the model
-module.exports = mongoose.model(DOCUMENT_NAME, accountSchema);
+module.exports = mongoose.model(DOCUMENT_NAME, classSchema);

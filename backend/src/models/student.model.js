@@ -7,11 +7,6 @@ var studentSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
-    },
-    classes: {
-      type: Array,
-      default: [],
     },
     accountId: {
       type: mongoose.Schema.Types.ObjectId,
