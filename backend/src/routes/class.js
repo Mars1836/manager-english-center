@@ -11,6 +11,8 @@ classRouter.post(
   asyncHandle(ClassCtrl.studentEnroll)
 );
 classRouter.post("/", asyncHandle(ClassCtrl.create));
+classRouter.post("/add-lesson", asyncHandle(ClassCtrl.addLesson));
+classRouter.get("/lesson", asyncHandle(ClassCtrl.findLessonsByClass));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
 
 module.exports = classRouter;
