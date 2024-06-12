@@ -674,13 +674,3 @@ F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagemen
 F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\obj\Debug\net6.0\CenterManagement.genruntimeconfig.cache
 F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\obj\Debug\net6.0\ref\CenterManagement.dll
 F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\AdvancedStringBuilder.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\JavaScriptEngineSwitcher.Core.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\JSPool.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\React.Core.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\React.Web.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\WebActivatorEx.dll
-F:\LAP_Trinh_wed\WED-BLA\manager-english-center\CenterManagement\CenterManagement\bin\Debug\net6.0\ru-RU\JavaScriptEngineSwitcher.Core.resources.dll
