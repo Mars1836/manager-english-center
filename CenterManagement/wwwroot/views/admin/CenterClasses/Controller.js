@@ -6,10 +6,6 @@ var app = angular.module("App_ESEIM", ["ngRoute", "ngResource", "ui.bootstrap", 
 
 app.controller("Ctrl_ESEIM", function ($scope, $rootScope) {
 
-
-
-
-
     $rootScope.studentData = {
         "id": 23,
         "name": "tiếng anh",
@@ -34,31 +30,48 @@ app.controller("Ctrl_ESEIM", function ($scope, $rootScope) {
         ]
     };
 
-
-
-
 });
 
-
-
-app.directive('outsideClick', function ($document) {
-    return {
-        restrict: 'A',
-        link: function (scope, element, attr) {
-            var clickHandler = function (event) {
-                if (!element[0].contains(event.target)) {
-                    scope.$apply(attr.outsideClick);
-                }
-            };
-
-            $document.on('click', clickHandler);
-
-            scope.$on('$destroy', function () {
-                $document.off('click', clickHandler);
-            });
+app.factory('dataservice', function ($http) {
+    $http.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+    var headers = {
+        "Content-Type": "application/json;odata=verbose",
+        "Accept": "application/json;odata=verbose",
+    }
+    var submitFormUpload = function (url, data, callback) {
+        var req = {
+            method: 'POST',
+            url: url,
+            headers: {
+                'Content-Type': undefined
+            },
+            beforeSend: function () {
+                App.blockUI({
+                    target: "#modal-body",
+                    boxed: true,
+                    message: 'loading...'
+                });
+            },
+            complete: function () {
+                App.unblockUI("#modal-body");
+            },
+            data: data
         }
+        $http(req).success(callback);
+    };
+    return {
+        addClasses: function (data, callback) {
+            $http.post('link/api' , data).success(callback);
+        },
+        addGrades: function (data, callback) {
+            $http.post('//', data).success(callback);
+        },
+
     };
 });
+
+
+
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -87,25 +100,44 @@ app.config(function ($routeProvider) {
 
 });
 
-
 app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal, DTOptionsBuilder, DTColumnBuilder) {
 
 
     vm = $scope;
     vm.dtOptions = DTOptionsBuilder.newOptions()
 
-
         //.withOption('ajax', {
         //    url: 'your-api-endpoint', // URL của API của bạn
         //    type: 'GET', // Loại yêu cầu (GET hoặc POST)
         //    dataSrc: 'data' // Tên thuộc tính trong phản hồi API chứa dữ liệu
         //})
+
+        //.withOption('ajax', {
+        //    url: "/TimekeepingData/HRLeaveType/JTable",
+        //    beforeSend: function (jqXHR, settings) {
+        //        App.blockUI({
+        //            target: "#contentMain",
+        //            boxed: true,
+        //            message: 'loading...'
+        //        });
+        //    },
+        //    type: 'POST',
+        //    data: function (d) {
+        //        d.Code = $scope.model.Code;
+        //        d.Name = $scope.model.Name;
+        //        d.Coefficient = $scope.model.Coefficient;
+        //        d.IsSubsidize = $scope.model.IsSubsidize;
+
+        //    },
+        //    complete: function () {
+        //        App.unblockUI("#contentMain");
+        //    }
+        //})
         //.withDataProp('data') // Cách cũ để chỉ định thuộc tính dữ liệu
-
-
 
         .withPaginationType('full_numbers')
         .withDisplayLength(9)
+        .withOption('order', [0, 'desc'])
         .withOption('autoWidth', false)
         .withOption('processing', true)
         .withOption('lengthChange', false)
@@ -128,8 +160,6 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
             "infoFiltered": "(lọc từ _MAX_ mục)",
             "zeroRecords": "Không tìm thấy dữ liệu"
         })
-
-
 
         /*.withOption('scrollX', false)*/
         /*  .withOption('serverSide', true)*/
@@ -160,7 +190,10 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
             return data;
         }),
         DTColumnBuilder.newColumn('action').notSortable().withTitle('Các buổi học').renderWith(function (data, type, full, meta) {
-            return '<button title="Chi tiết" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;" class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>';
+            return '<button title="Chi tiết" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;" class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>' +
+            
+                '<button title="Chỉnh sửa " ng-click="edit(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;" class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa fa-edit"></i></button>'
+            ;
 
 
         })
@@ -191,7 +224,7 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
             size: 'lg',
 
             resolve: {
-                ClassesId: function () {
+                classesId: function () {
                     return id;
                 }
             }
@@ -260,12 +293,10 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
 
 });
 
+app.controller('detail', function ($scope, $uibModalInstance, $rootScope, $http, classesId, $compile, $uibModal, DTOptionsBuilder, DTColumnBuilder) {
 
 
-app.controller('detail', function ($scope, $uibModalInstance, $rootScope, $http, ClassesId, $compile, $uibModal, DTOptionsBuilder, DTColumnBuilder) {
-
-
-    $http.post('http://localhost:3000/api/v1/student', ClassesId)
+    $http.post('http://localhost:3000/api/v1/student', classesId)
         .then(function (response) {
 
             vm.dtOptions.data = response;
@@ -387,24 +418,30 @@ app.controller('detail', function ($scope, $uibModalInstance, $rootScope, $http,
 
 });
 
-app.controller('addClasses', function ($scope, $uibModalInstance, $rootScope, $compile, $uibModal, DTOptionsBuilder, DTColumnBuilder) {
-
-
-
+app.controller('addClasses', function ($scope, $uibModalInstance, $rootScope, $compile, $uibModal, dataservice) {
 
     $scope.model = {   
-        Grade:'',
-        Name: '',
-        Year: '',
-        MaxStudent: '',    
+        grade:'',
+        name: '',
+        year: '',
+        maxStudent: '', 
+        tuition:'',
         
     }
-
-
-    $scope.ok = function () {
+    $scope.submit = function () {
+        dataservice.addClasses($scope.model, function (result) {
+            if (result.Error) {
+                App.toastrError(result.Title);
+            } else {
+                App.toastrSuccess(result.Title);
+                $uibModalInstance.close();
+                $rootScope.reload();
+            }
+            App.unblockUI("#contentMain");
+        });
         $uibModalInstance.close();
-    };
 
+    }
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
@@ -427,7 +464,6 @@ app.controller('addGrades', function ($scope, $uibModalInstance, $rootScope, $co
     $scope.ok = function () {
         $uibModalInstance.close();
     };
-
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };

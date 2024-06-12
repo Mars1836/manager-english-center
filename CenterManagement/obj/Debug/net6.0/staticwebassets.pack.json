@@ -817,22 +817,6 @@
       "PackagePath": "staticwebassets\\views\\lecturers\\ListClassesLecturers\\index.html"
     },
     {
-      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\log\\component\\home.jsx",
-      "PackagePath": "staticwebassets\\views\\log\\component\\home.jsx"
-    },
-    {
-      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\log\\component\\login.jsx",
-      "PackagePath": "staticwebassets\\views\\log\\component\\login.jsx"
-    },
-    {
-      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\log\\component\\sign-up.jsx",
-      "PackagePath": "staticwebassets\\views\\log\\component\\sign-up.jsx"
-    },
-    {
-      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\log\\component\\tos.jsx",
-      "PackagePath": "staticwebassets\\views\\log\\component\\tos.jsx"
-    },
-    {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\student\\ListClassesStudents\\Controller.js",
       "PackagePath": "staticwebassets\\views\\student\\ListClassesStudents\\Controller.js"
     },

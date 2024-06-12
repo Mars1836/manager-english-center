@@ -35,7 +35,7 @@
                 <label for="exampleInputPassword1">Tổng học phí</label>
                 <input type="text" class="form-control" ng-model="model.tuition" id="exampleInputPassword1" placeholder="Năm học...">
             </div>
-            <button type="button" class="btn btn-gradient-danger btn-icon-text click-button" style="height: 41px; padding-left: 17px; padding-right: 17px">
+            <button type="button" class="btn btn-gradient-danger btn-icon-text click-button" ng-click="submit()" style="height: 41px; padding-left: 17px; padding-right: 17px">
                 Thêm mới
             </button>
             <button class="btn btn-light click-button" ng-click="cancel()">Cancel</button>

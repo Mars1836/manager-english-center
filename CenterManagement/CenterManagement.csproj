@@ -7,9 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\views\log\App.jsx" />
-    <Content Remove="wwwroot\views\log\main.jsx" />
-    <Content Remove="wwwroot\views\log\styles.css" />
+    <Compile Remove="wwwroot\views\log\**" />
+    <Content Remove="wwwroot\views\log\**" />
+    <EmbeddedResource Remove="wwwroot\views\log\**" />
+    <None Remove="wwwroot\views\log\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,12 +23,6 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\views\log\App.jsx" />
-    <None Include="wwwroot\views\log\main.jsx" />
-    <None Include="wwwroot\views\log\styles.css" />
   </ItemGroup>
 
 </Project>
