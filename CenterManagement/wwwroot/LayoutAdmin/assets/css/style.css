@@ -8517,20 +8517,26 @@ textarea.form-control-lg {
   color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important; }
 
 .text-success {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important; }
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+    font-weight: bold;
+}
 
 .text-info {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-info-rgb), var(--bs-text-opacity)) !important; }
 
 .text-warning {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important; }
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important;
+    font-weight: bold;
+}
 
 .text-danger {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important; }
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-danger-rgb), var(--bs-text-opacity)) !important;
+    font-weight: bold;
+}
 
 .text-light {
   --bs-text-opacity: 1;
@@ -14672,4 +14678,11 @@ input[readonly] {
     border-radius: 5px;
     height: 33px;
     margin-left: 7px !important;
+}
+
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+    height: 30px; /* Đặt chiều cao của các hàng là 60px */
+  
 }

@@ -6,29 +6,21 @@ var app = angular.module("App_ESEIM", ["ngRoute", "ngResource", "ui.bootstrap", 
 
 app.controller("Ctrl_ESEIM", function ($scope, $rootScope) {
 
-    $rootScope.studentData = {
-        "id": 23,
-        "name": "tiếng anh",
-        "year": 2024,
-        "grade": "3.1",
-        "lessons": [
-            {
-                "date": "2024-05-29",
-                "topic": "Introduction to Algebra",
-                "teacherId": "66640f7ccf0f68d1c98dad85"
-            },
-            {
-                "date": "2024-05-30",
-                "topic": "Linear Equations",
-                "teacherId": "66640f7ccf0f68d1c98dad85"
-            },
-            {
-                "date": "2024-06-01",
-                "topic": "Statistics",
-                "teacherId": "66640f7ccf0f68d1c98dad85"
-            }
-        ]
-    };
+   
+    $rootScope.studentData = [
+        { id: 1, subject: 'tiếng anh', year: '2024', grade: "3.1", maxStudents: 70, registerStudent: 30, tuition:20000000, statusClasses: "Mở đăng ký" },
+        { id: 2, subject: 'tiếng anh', year: '2024', grade: "3.1", maxStudents: 70, registerStudent: 30, tuition: 70000000, statusClasses: "Đóng đăng ký" },
+        { id: 3, subject: 'tiếng anh', year: '2024', grade: "3.1", maxStudents: 70, registerStudent: 30, tuition: 90000000, statusClasses: "Lớp học kết thúc" }
+    ]
+
+
+
+
+    $rootScope.gradeData = [
+        { id: 1, teacherId: 'Nguyễn Văn Hưng', topic: '2024', grade: "3.1", startDate: "23/7/2024", startTime:"7h00",endTime:"10h30" },
+        { id: 2, teacherId: 'Vữ Công Hậu', topic: '2024', grade: "3.1", startDate: "28/7/2024", startTime: "7h00", endTime: "10h30" },
+        { id: 3, teacherId: 'Đăng Minh Phương', topic: '2024', grade: "3.1", startDate: "31/7/2024", startTime: "7h00", endTime: "10h30" }
+    ]
 
 });
 
@@ -66,7 +58,12 @@ app.factory('dataservice', function ($http) {
         addGrades: function (data, callback) {
             $http.post('//', data).success(callback);
         },
-
+        close: function (data, callback) {
+            $http.post('//', data).success(callback);
+        },
+        delete: function (data, callback) {
+            $http.post('//', data).success(callback);
+        },
     };
 });
 
@@ -174,7 +171,7 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
         DTColumnBuilder.newColumn('id').withTitle('ID').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('name').withTitle('Môn học').renderWith(function (data, type) {
+        DTColumnBuilder.newColumn('subject').withTitle('Môn học').renderWith(function (data, type) {
             return data;
         }),
         DTColumnBuilder.newColumn('year').withTitle('Năm học').renderWith(function (data, type) {
@@ -183,24 +180,44 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
         DTColumnBuilder.newColumn('grade').withTitle('Tên lớp').renderWith(function (data, type) {
             return data;
         }),     
-        DTColumnBuilder.newColumn('maxStudents').withTitle('Số lượng học viên').renderWith(function (data, type) {
+        DTColumnBuilder.newColumn('maxStudents').withTitle('Học Viên tối đa').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('tuition').withTitle('Họp phí lớp').renderWith(function (data, type) {
-            return data;
+        DTColumnBuilder.newColumn('registerStudent').withTitle('Số lượng đăng ký').renderWith(function (data, type,full) {
+            return data + "/" + full.maxStudents;
         }),
-        DTColumnBuilder.newColumn('action').notSortable().withTitle('Các buổi học').renderWith(function (data, type, full, meta) {
-            return '<button title="Chi tiết" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;" class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>' +
+        DTColumnBuilder.newColumn('tuition').withTitle('Học phí lớp').renderWith(function (data, type) {
+            return data +"đ";
+        }),
+        DTColumnBuilder.newColumn('statusClasses').withTitle('trạng thái').renderWith(function (data, type) {
+            if (data == "Mở đăng ký") {
+                return `<span class="text-success">Mở đăng ký</span>`;
+            } else if (data == "Lớp học kết thúc") {
+                return `<span  class="text-danger">Lớp học kết thúc</span>`;
+            } else if (data == "Đóng đăng ký") {
+                return `<span  class="text-warning">Đóng đăng ký</span>`;
+            } else { return data; }
+              
+        }),
+        DTColumnBuilder.newColumn('action').notSortable().withTitle('Thao tác').renderWith(function (data, type, full, meta) {
+            if (full.statusClasses == "Mở đăng ký") {
+                return '<button title="Các buổi học" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #3d9afb;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>' +
+                    '<button title="Đóng đăng ký" ng-click="lock(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #ff6000;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-key"></i></button>' +
+                    '<button title="Xóa" ng-click="delete(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #fe0000;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa fa-trash"></i></button>';
+            }
+            else if (full.statusClasses == "Đóng đăng ký") {
+                return '<button title="Các buổi học" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #3d9afb;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>' +
+                    '<button title="Mở đăng ký" ng-click="lock(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #47b35b;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-unlock-keyhole"></i></button>' +
+                    '<button title="Xóa" ng-click="delete(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #fe0000;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa fa-trash"></i></button>';
+            }
+            else
+                return '<button title="Các buổi học" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #3d9afb;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>';
             
-                '<button title="Chỉnh sửa " ng-click="edit(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;" class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa fa-edit"></i></button>'
-            ;
-
-
         })
     ];
 
     vm.dtInstance = {};
-    vm.dtOptions.data = [$rootScope.studentData];
+    vm.dtOptions.data = $rootScope.studentData;
 
 
     //$scope.response = {};
@@ -213,6 +230,62 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
     //        console.error('Error:', error);
     //    });
 
+    $scope.lock = function (id) {
+        var modalInstance = $uibModal.open({
+            templateUrl: ctxfolderMessage + '/messageConfirmDeleted.html',
+            windowClass: "message-center",
+            controller: function ($scope, $uibModalInstance) {
+                $scope.message = "Bạn có chắc chắn muốn xóa ?";
+                $scope.ok = function () {
+                    dataservice.close(id, function (rs) {
+                        if (rs.Error) {
+                            App.toastrError(rs.Title);
+                        } else {
+                            App.toastrSuccess(rs.Title);
+                            $uibModalInstance.close();
+                        }
+                    });
+                };
+
+                $scope.cancel = function () {
+                    $uibModalInstance.dismiss('cancel');
+                };
+            },
+            size: '25',
+        });
+        modalInstance.result.then(function (d) {
+            $scope.reloadNoResetPage();
+        }, function () {
+        });
+    };
+    $scope.delete = function (id) {
+        var modalInstance = $uibModal.open({
+            templateUrl: ctxfolderMessage + '/messageConfirmDeleted.html',
+            windowClass: "message-center",
+            controller: function ($scope, $uibModalInstance) {
+                $scope.message = "Bạn có chắc chắn muốn xóa ?";
+                $scope.ok = function () {
+                    dataservice.delete(id, function (rs) {
+                        if (rs.Error) {
+                            App.toastrError(rs.Title);
+                        } else {
+                            App.toastrSuccess(rs.Title);
+                            $uibModalInstance.close();
+                        }
+                    });
+                };
+
+                $scope.cancel = function () {
+                    $uibModalInstance.dismiss('cancel');
+                };
+            },
+            size: '25',
+        });
+        modalInstance.result.then(function (d) {
+            $scope.reloadNoResetPage();
+        }, function () {
+        });
+    };
 
     $scope.detail = function (id) {
         console.log('Opening detail modal for student with id:', id);
@@ -364,7 +437,7 @@ app.controller('detail', function ($scope, $uibModalInstance, $rootScope, $http,
         DTColumnBuilder.newColumn('topic').withTitle('Bài giảng').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('startDate').withTitle('Ngày dạy').renderWith(function (data, type) {
+        DTColumnBuilder.newColumn('startDate').withTitle('Buổi học').renderWith(function (data, type) {
             return data;
         }),
         DTColumnBuilder.newColumn('startTime').withTitle('Thời gian bắt đầu').renderWith(function (data, type) {
@@ -376,7 +449,7 @@ app.controller('detail', function ($scope, $uibModalInstance, $rootScope, $http,
     ];
 
     vm.dtInstance = {};
-    vm.dtOptions.data = $rootScope.studentData.lessons;
+    vm.dtOptions.data = $rootScope.gradeData;
 
     $scope.addGrades = function () {
 

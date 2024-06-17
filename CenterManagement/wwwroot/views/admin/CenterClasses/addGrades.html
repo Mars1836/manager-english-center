@@ -22,7 +22,7 @@
                 <input type="text" class="form-control" ng-model="mode.teacherId" id="exampleInputUsername1" placeholder="Chọn giảng viên...">
             </div>
             <div class="form-group">
-                <label for="exampleInputUsername1">Ngày dạy:</label>
+                <label for="exampleInputUsername1">Buổi học:</label>
                 <div style="position:relative">
                     <i class="fas fa-calendar-alt click-button" ng-click="openStartDate()" style="position: absolute; transform: translateY(88%); right: 17px; "></i>
                     <input type="text" class="form-control" readonly required ng-click="openStartDate()" ng-model="mode.startDate" placeholder="Ngày dạy..." uib-datepicker-popup="{{format}}" is-open="startDate.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats">

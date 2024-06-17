@@ -29,32 +29,6 @@ app.config(function ($routeProvider) {
 
 });
 
-//app.directive('myDirective', function () {
-//    return {
-//        restrict: 'A',
-//        link: function (scope, element, attrs) {
-//            var targetNode = element[0];
-//            var config = { childList: true, subtree: true };
-
-//            var callback = function (mutationsList, observer) {
-//                for (var mutation of mutationsList) {
-//                    if (mutation.type === 'childList') {
-//                        console.log('A child node has been added or removed.');
-//                    }
-//                }
-//            };
-
-//            var observer = new MutationObserver(callback);
-//            observer.observe(targetNode, config);
-
-//            scope.$on('$destroy', function () {
-//                observer.disconnect();
-//            });
-//        }
-//    };
-//});
-
-
 
 
 
@@ -133,39 +107,51 @@ app.controller('index', function ($scope,$compile,$rootScope, $http, $timeout, $
             $compile(angular.element(row).contents())($scope);
         });
    
-        vm.dtColumns = [
-            DTColumnBuilder.newColumn('Id').withTitle('ID').renderWith(function (data, type) {
-                return data;
-            }),
-            DTColumnBuilder.newColumn('Name').withTitle('Tên').renderWith(function (data, type) {
-                return data;
-            }),
-            DTColumnBuilder.newColumn('Year').withTitle('Năm học').renderWith(function (data, type) {
-                return data;
-            }),
-            DTColumnBuilder.newColumn('Grade').withTitle('Lớp').renderWith(function (data, type) {
-                return data;
-            }),
-            DTColumnBuilder.newColumn('Absent').withTitle('Đã nghỉ').renderWith(function (data, type) {
-                return data;
-            }),
-            DTColumnBuilder.newColumn('Address').withTitle('Số tiền còn nợ').renderWith(function (data, type) {
-                return data;
-            }),
-            DTColumnBuilder.newColumn('Lession').notSortable().withTitle('Các buổi học').renderWith(function (data, type, full, meta) {
-                return '<button title="Chi tiết" ng-click="detail(' + full.Lession + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;" class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="mdi mdi-account-search"></i></button>';
+    vm.dtColumns = [
+        DTColumnBuilder.newColumn('id').withTitle('ID').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('subject').withTitle('Môn học').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('year').withTitle('Năm học').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('classes').withTitle('Lớp').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('teacher').withTitle('Giảng viên chính').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('totalLesson').withTitle('Tổng số buổi học').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('learned').withTitle('Đã học').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('skipClass').withTitle('Đã nghỉ').renderWith(function (data, type) {
+            return `<span  class="text-danger">` + data + `</span>`;
+        }),
+        DTColumnBuilder.newColumn('tuition').withTitle('Học phí').renderWith(function (data, type) {
+            return data + "đ";
+        }),
+        DTColumnBuilder.newColumn('tuitionUnpaid').withTitle('Còn phải đóng').renderWith(function (data, type) {
+            return `<span  class="text-danger">` + data + `</span>`;
+        }),
+        DTColumnBuilder.newColumn('action').notSortable().withTitle().renderWith(function (data, type, full, meta) {
+            if (full.tuitionUnpaid || full.tuitionUnpaid != 0)
+            return ' <button type="button"  ng-click="pay(' + full.Id + ')" class="btn btn-gradient-danger btn-icon-text click-button" style="height: 30px; padding-left: 17px; padding-right: 17px;background: #ff6300;align-items: center;display:flex;">Thanh toán</button > ';
+        }),
 
-
-            })
-        ];
-   
-    vm.dtInstance = {};
-    vm.dtOptions.data = [
-        { Id: 1, Class: '3.1A', Year: '01/01/2000', Absent: 2, Address: 'Address 1' },
-        { Id: 2, Class: '25A', Year: '01/02/2000', Absent: 4, Address: 'Address 2' },
-        { Id: 3, Class: '40A', Year: '01/03/2000', Absent: 7, Address: 'Address 3' }
     ];
-   
+
+    vm.dtInstance = {};
+
+    vm.dtOptions.data = [
+        { Id: 1, subject: 'Listening', year: '2000', totalLesson: 15, learned: 2, classes: 'Grade 1', teacher:"Nguyễn Văn Hưng", skipClass: 1, tuition: 20000000, tuitionUnpaid :400000},
+        { Id: 2, subject: 'reading', year: '2000', totalLesson: 14, learned: 4, classes: 'Grade 2', teacher: "Nguyễn Văn Hưng", skipClass: 2, tuition: 20000000, tuitionUnpaid: 400000 } ,
+        { Id: 3, subject: 'wishtkjths', year: '2000', totalLesson: 17, learned: 7, classes: 'Grade 3', teacher: "Nguyễn Văn Hưng", skipClass: 2, tuition: 20000000, tuitionUnpaid: 400000 }
+    ];
 
 
     //vm.dtOptions.data = $http.get('http://localhost:3000/api/v1/student/infor?')
@@ -198,15 +184,8 @@ app.controller('detail', function ($scope, $uibModalInstance, studentId) {
 
     $scope.studentId = studentId;
 
-    // Example student detail data
     $scope.studentDetail = {
         id: studentId,
-        //Name: 'Example Name',
-        //Class: '3.1A',
-        //DateBirth: '01/01/2000',
-        //Absent: 2,
-        //Address: 'Example Address',
-        //OwedAmount: 100
     };
 
     $scope.ok = function () {

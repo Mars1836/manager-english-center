@@ -801,6 +801,14 @@
       "PackagePath": "staticwebassets\\views\\admin\\CenterClasses\\index.html"
     },
     {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\admin\\CenterTeacher\\Controller.js",
+      "PackagePath": "staticwebassets\\views\\admin\\CenterTeacher\\Controller.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\admin\\CenterTeacher\\index.html",
+      "PackagePath": "staticwebassets\\views\\admin\\CenterTeacher\\index.html"
+    },
+    {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\lecturers\\Attendance\\Controller.js",
       "PackagePath": "staticwebassets\\views\\lecturers\\Attendance\\Controller.js"
     },
@@ -811,6 +819,10 @@
     {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\lecturers\\ListClassesLecturers\\Controller.js",
       "PackagePath": "staticwebassets\\views\\lecturers\\ListClassesLecturers\\Controller.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\lecturers\\ListClassesLecturers\\attendance.html",
+      "PackagePath": "staticwebassets\\views\\lecturers\\ListClassesLecturers\\attendance.html"
     },
     {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\lecturers\\ListClassesLecturers\\index.html",
@@ -827,6 +839,22 @@
     {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\student\\ListClassesStudents\\index.html",
       "PackagePath": "staticwebassets\\views\\student\\ListClassesStudents\\index.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\student\\RegisterClasses\\Controller.js",
+      "PackagePath": "staticwebassets\\views\\student\\RegisterClasses\\Controller.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\student\\RegisterClasses\\index.html",
+      "PackagePath": "staticwebassets\\views\\student\\RegisterClasses\\index.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\student\\Schedule\\Controller.js",
+      "PackagePath": "staticwebassets\\views\\student\\Schedule\\Controller.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\student\\Schedule\\index.html",
+      "PackagePath": "staticwebassets\\views\\student\\Schedule\\index.html"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.CenterManagement.Microsoft.AspNetCore.StaticWebAssets.props",
