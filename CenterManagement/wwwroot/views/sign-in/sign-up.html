@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>Login & Register</title>
+</head>
+<body>
+  <h1>Welcome to Enlish Center Mangement System</h1>
+    <div id="login-tab-content" class="tabcontent">
+        <h3>Sign In</h3>
+        <form class="login-form" action="" method="post" >
+        <input type="text" class="input" id="user_login" autocomplete="off" placeholder="Username"/>
+        <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password"/>
+        <div class="checkbox" id="remember_me">
+          <input type="checkbox"/>
+          <label for="remember_me">Remember me</label>
+        </div>
+        <input type="submit" class="button" value="Login" />
+        </form>
+        <div class="help-text">
+        <p>
+            <a href="#signup-tab-content">Forget your password? </a>
+            <a class="tablinksignup">Sign up</a>
+        </p>
+        </div>
+    </div>
+    <div id="signup-tab-content" class="tabcontent">
+        <h3>Sign up</h3>
+        <form class="signup-form" action="" method="post">
+          <input type="email" class="input" id="user_email" autocomplete="off" placeholder="Email">
+          <input type="text" class="input" id="user_name" autocomplete="off" placeholder="Username">
+          <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password">
+          <input type="password" class="input" id="user_pass_confirm" autocomplete="off" placeholder="Confirm Password">
+          <input type="submit" class="button" value="Sign Up" />
+        </form>
+        <div class="help-text">
+          <p>By signing up, you agree to our Term of service</p>
+          <a class="tablinksignin">Sign in</a>
+        </div>
+      </div>
+  <script src="script.js"></script>
+</body>
+</html>
