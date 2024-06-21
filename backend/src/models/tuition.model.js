@@ -5,9 +5,12 @@ const DOCUMENT_NAME = "tuition";
 var tuitionSchema = new mongoose.Schema(
   {
     classId: {
-      type: ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
-      unique: true,
+    },
+    studentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
     },
     original_cost: {
       type: Number,
@@ -19,12 +22,11 @@ var tuitionSchema = new mongoose.Schema(
     },
     deadline: {
       type: Date,
-      required: true,
     },
-    discount: {
-      type: String,
-      enum: ["male", "female"],
+    last_cost: {
+      type: Number,
       required: true,
+      default: 0,
     },
     isFinish: {
       type: Boolean,
@@ -36,6 +38,12 @@ var tuitionSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
+tuitionSchema.pre("save", function (next) {
+  if (this.isModified("original_cost") || this.isModified("discount")) {
+    this.last_cost =
+      this.original_cost - this.original_cost * (this.discount / 100);
+  }
+  next();
+});
 //Export the model
 module.exports = mongoose.model(DOCUMENT_NAME, tuitionSchema);

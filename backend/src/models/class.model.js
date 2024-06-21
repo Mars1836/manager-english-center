@@ -16,10 +16,19 @@ var classSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    tuition: {
+      type: Number,
+      required: true,
+    },
     students: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: "student",
       default: [],
+    },
+    status: {
+      type: String,
+      enum: ["open", "close", "end"],
+      default: "open",
     },
   },
   {

@@ -32,12 +32,21 @@ class ClassCtrl {
     }).send(res);
   }
   static async studentEnroll(req, res, next) {
+    const studentId = req.body;
     const metadata = await ClassService.studentEnroll(
-      { studentId: req.auth.student.id },
+      // { studentId: req.auth.student.id },
+      { studentId },
       req.body
     );
     return new CreateSuccess({
       message: "Enroll class successfull.",
+      metadata,
+    }).send(res);
+  }
+  static async attendance(req, res, next) {
+    const metadata = await ClassService.attendance(req.body);
+    return new CreateSuccess({
+      message: "Update success",
       metadata,
     }).send(res);
   }
