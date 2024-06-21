@@ -32,10 +32,10 @@
     <None Include="wwwroot\Schedule\assets\apps\scripts\todo-2.min.js" />
     <None Include="wwwroot\Schedule\assets\apps\scripts\todo.js" />
     <None Include="wwwroot\Schedule\assets\apps\scripts\todo.min.js" />
-    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap\bootstrap-switch\js\bootstrap-switch.js" />
-    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap\bootstrap-switch\js\bootstrap-switch.min.js" />
-    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap\bootstrap-switch\LICENSE" />
-    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap\bootstrap-switch\README.md" />
+    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap-switch\js\bootstrap-switch.js" />
+    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap-switch\js\bootstrap-switch.min.js" />
+    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap-switch\LICENSE" />
+    <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap-switch\README.md" />
     <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap\js\bootstrap.js" />
     <None Include="wwwroot\Schedule\assets\global\plugins\bootstrap\js\bootstrap.min.js" />
     <None Include="wwwroot\Schedule\assets\global\plugins\fullcalendar\demos\php\get-events.php" />

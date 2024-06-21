@@ -14711,3 +14711,15 @@ table.dataTable tbody td {
 .nav-profile-img img{
     border-radius:50% !important;
 }
+
+
+.layout_lock_screen {
+    background: #484848;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 0.3;
+}

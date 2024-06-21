@@ -6,7 +6,7 @@ var app = angular.module("App_ESEIM", ["ngRoute", "ngResource", "ui.bootstrap", 
 
 app.controller("Ctrl_ESEIM", function ($scope, $rootScope) {
 
-   
+    $rootScope.lock_screen = false;
     $rootScope.studentData = [
         { id: 1, subject: 'tiếng anh', year: '2024', grade: "3.1", maxStudents: 70, registerStudent: 30, tuition:20000000, statusClasses: "Mở đăng ký" },
         { id: 2, subject: 'tiếng anh', year: '2024', grade: "3.1", maxStudents: 70, registerStudent: 30, tuition: 70000000, statusClasses: "Đóng đăng ký" },
@@ -219,6 +219,7 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
     vm.dtInstance = {};
     vm.dtOptions.data = $rootScope.studentData;
 
+   
 
     //$scope.response = {};
     // $http.get('http://localhost:3000/api/v1/student')
@@ -289,13 +290,13 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
 
     $scope.detail = function (id) {
         console.log('Opening detail modal for student with id:', id);
+        $rootScope.lock_screen = !$rootScope.lock_screen;
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: ctxfolder + '/detail.html',
             controller: 'detail',
-            backdrop: 'static',
+            backdrop: true,
             size: 'lg',
-
             resolve: {
                 classesId: function () {
                     return id;
@@ -307,8 +308,9 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
                 'display': 'block',
                 'visibility': 'visible',
                 'opacity': '1',
-                'top': '34vh',
-                'left': '17%'
+                'top': '20vh',
+                'max-width': '100%',
+                'left': '7%',
             });
             $('.modal-content').css({
                 'top': '23px !important'
@@ -324,10 +326,12 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
         }, function () {
             console.log('Modal dismissed at: ' + new Date());
         });
+
+
     };
 
     $scope.addClasses = function () {
-
+        $rootScope.lock_screen = !$rootScope.lock_screen;
         var modalInstance = $uibModal.open({
             animation: true,
             templateUrl: ctxfolder + '/addClasses.html',
@@ -343,9 +347,8 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
                 'display': 'block',
                 'visibility': 'visible',
                 'opacity': '1',               
-                'left': '23%',
-                'overflow': 'hidden',
-                 'overflow': 'visible'
+                'left': '7%',
+                'max-width': '100%',
             });
             var modalContentElement = angular.element(document.querySelector('.modal-content'));
             modalContentElement.attr('style', 'top: 23px !important', 'position: relative');
@@ -387,6 +390,7 @@ app.controller('detail', function ($scope, $uibModalInstance, $rootScope, $http,
 
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
+        $rootScope.lock_screen = !$rootScope.lock_screen;
     };
 
 
@@ -466,8 +470,9 @@ app.controller('detail', function ($scope, $uibModalInstance, $rootScope, $http,
                 'display': 'block',
                 'visibility': 'visible',
                 'opacity': '1',
-                'left': '23%',
-                'overflow': 'hidden'
+                'left': '7%',
+                'overflow': 'hidden',
+                 'max-width': '100%',
             });
             $('.modal-content').css({
                 'top': '23px !important'
@@ -502,6 +507,7 @@ app.controller('addClasses', function ($scope, $uibModalInstance, $rootScope, $c
         
     }
     $scope.submit = function () {
+       
         dataservice.addClasses($scope.model, function (result) {
             if (result.Error) {
                 App.toastrError(result.Title);
@@ -516,6 +522,7 @@ app.controller('addClasses', function ($scope, $uibModalInstance, $rootScope, $c
 
     }
     $scope.cancel = function () {
+        $rootScope.lock_screen = !$rootScope.lock_screen;
         $uibModalInstance.dismiss('cancel');
     };
 

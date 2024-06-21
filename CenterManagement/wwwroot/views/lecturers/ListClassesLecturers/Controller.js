@@ -69,6 +69,7 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
         DTColumnBuilder.newColumn('id').withTitle('ID').renderWith(function (data, type) {
             return data;
         }),
+
         DTColumnBuilder.newColumn('grade').withTitle('Lớp').renderWith(function (data, type) {
             return data;
         }),
@@ -91,6 +92,8 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
            
             return ' <button type="button"  ng-click="attendance(' + full.Id + ')" class="btn btn-gradient-danger btn-icon-text click-button" style="height: 30px; padding-left: 17px; padding-right: 17px;background: #ff6300;align-items: center;display:flex;">Điểm danh</button > ';
         }),
+
+
     ];
 
     vm.dtInstance = {};
@@ -220,13 +223,20 @@ app.controller('attendance', function ($scope, $uibModalInstance, $rootScope, $h
         DTColumnBuilder.newColumn('address').withTitle('Địa chỉ').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('startTime').withTitle('Thời gian bắt đầu').renderWith(function (data, type) {
+        DTColumnBuilder.newColumn('startTime').withTitle('Buổi x').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('endTime').withTitle('Thời Gian kết thúc').renderWith(function (data, type) {
+        DTColumnBuilder.newColumn('endTime').withTitle('Buổi y').renderWith(function (data, type) {
             return data;
+        }),
+        DTColumnBuilder.newColumn(null).withTitle('điểm danh').notSortable().renderWith(function (data, type, full, meta) {
+            return '<input type="checkbox" ng-model="selected[' + full.Id + ']" ng-click="toggleSelection(' + full.Id + ')">';
         }),
     ];
+    
+    //vm.dtColumns.push(DTColumnBuilder.newColumn(null).withTitle('iddjfh').renderWith(function (data, type) {
+    //    return data;
+    //}),)
 
 
 
@@ -237,10 +247,8 @@ app.controller('attendance', function ($scope, $uibModalInstance, $rootScope, $h
     vm.dtOptions.data = [
         { Id: 1, subject: 'Listening', year: '2000', totalLesson: 15, learned: 2, grade: 'Grade 1' },
         { Id: 2, subject: 'reading', year: '2000', totalLesson: 14, learned: 4, grade: 'Grade 2' },
-        { Id: 3, subject: 'wishtkjths', year: '2000', totalLesson: 17, learned: 7, grade: 'Grade 3' }
+        { Id: 3, subject: 'wishtkjths', year: '2000', totalLesson: 17, learned: 7, grade: 'Grade 3' }       
     ]
-
-   
 });
 
 
