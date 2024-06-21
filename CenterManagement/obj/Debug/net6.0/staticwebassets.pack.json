@@ -525,6 +525,470 @@
       "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff2"
     },
     {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\calendar.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\calendar.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\calendar.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\calendar.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\inbox.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\inbox.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\inbox.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\inbox.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\todo-2.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\todo-2.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\todo-2.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\todo-2.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\todo.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\todo.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\apps\\scripts\\todo.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\apps\\scripts\\todo.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\css\\components.min.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\css\\components.min.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\css\\plugins.min.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\css\\plugins.min.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\LICENSE",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\README.md",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\README.md"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\css\\bootstrap-switch.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\css\\bootstrap-switch.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\css\\bootstrap-switch.min.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\css\\bootstrap-switch.min.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\js\\bootstrap-switch.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\js\\bootstrap-switch.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\js\\bootstrap-switch.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\bootstrap-switch\\js\\bootstrap-switch.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\changelog.txt",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\changelog.txt"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\agenda-views.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\agenda-views.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\background-events.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\background-events.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\basic-views.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\basic-views.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\default.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\default.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\external-dragging.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\external-dragging.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\gcal.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\gcal.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\json.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\json.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\json\\events.json",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\json\\events.json"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\languages.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\languages.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\php\\get-events.php",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\php\\get-events.php"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\php\\get-timezones.php",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\php\\get-timezones.php"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\php\\utils.php",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\php\\utils.php"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\selectable.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\selectable.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\theme.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\theme.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\timezones.html",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\demos\\timezones.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.min.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.min.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.print.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\fullcalendar.print.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\gcal.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\gcal.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang-all.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang-all.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar-ma.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar-ma.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar-sa.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar-sa.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar-tn.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar-tn.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ar.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\bg.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\bg.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ca.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ca.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\cs.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\cs.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\da.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\da.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\de-at.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\de-at.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\de.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\de.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\el.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\el.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\en-au.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\en-au.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\en-ca.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\en-ca.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\en-gb.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\en-gb.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\es.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\es.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fa.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fa.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fi.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fi.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fr-ca.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fr-ca.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fr.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\fr.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\he.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\he.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\hi.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\hi.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\hr.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\hr.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\hu.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\hu.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\id.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\id.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\is.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\is.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\it.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\it.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ja.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ja.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ko.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ko.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\lt.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\lt.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\lv.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\lv.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\nb.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\nb.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\nl.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\nl.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\pl.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\pl.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\pt-br.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\pt-br.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\pt.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\pt.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ro.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ro.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ru.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\ru.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sk.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sk.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sl.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sl.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sr-cyrl.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sr-cyrl.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sr.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sr.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sv.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\sv.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\th.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\th.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\tr.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\tr.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\uk.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\uk.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\vi.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\vi.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\zh-cn.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\zh-cn.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\zh-tw.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lang\\zh-tw.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\animated-overlay.gif",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\animated-overlay.gif"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_diagonals-thick_90_eeeeee_40x40.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_diagonals-thick_90_eeeeee_40x40.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_flat_15_cd0a0a_40x100.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_flat_15_cd0a0a_40x100.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_glass_100_e4f1fb_1x400.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_glass_100_e4f1fb_1x400.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_glass_50_3baae3_1x400.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_glass_50_3baae3_1x400.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_glass_80_d7ebf9_1x400.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_glass_80_d7ebf9_1x400.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-hard_100_f2f5f7_1x100.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-hard_100_f2f5f7_1x100.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-hard_70_000000_1x100.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-hard_70_000000_1x100.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-soft_100_deedf7_1x100.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-soft_100_deedf7_1x100.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-soft_25_ffef8f_1x100.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-bg_highlight-soft_25_ffef8f_1x100.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_2694e8_256x240.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_2694e8_256x240.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_2e83ff_256x240.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_2e83ff_256x240.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_3d80b3_256x240.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_3d80b3_256x240.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_72a7cf_256x240.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_72a7cf_256x240.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_ffffff_256x240.png",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\images\\ui-icons_ffffff_256x240.png"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\jquery-ui.min.css",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\cupertino\\jquery-ui.min.css"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\jquery-ui.custom.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\jquery-ui.custom.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\jquery.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\jquery.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\moment.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\lib\\moment.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\fullcalendar\\license.txt",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\fullcalendar\\license.txt"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\jquery.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\jquery.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\jquery.min.map",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\jquery.min.map"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\plugins\\moment.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\plugins\\moment.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\scripts\\app.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\scripts\\app.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\scripts\\app.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\scripts\\app.min.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\scripts\\datatable.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\scripts\\datatable.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\Schedule\\assets\\global\\scripts\\datatable.min.js",
+      "PackagePath": "staticwebassets\\Schedule\\assets\\global\\scripts\\datatable.min.js"
+    },
+    {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -827,6 +1291,14 @@
     {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\lecturers\\ListClassesLecturers\\index.html",
       "PackagePath": "staticwebassets\\views\\lecturers\\ListClassesLecturers\\index.html"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\lecturers\\Schedule\\Controller.js",
+      "PackagePath": "staticwebassets\\views\\lecturers\\Schedule\\Controller.js"
+    },
+    {
+      "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\lecturers\\Schedule\\index.html",
+      "PackagePath": "staticwebassets\\views\\lecturers\\Schedule\\index.html"
     },
     {
       "Id": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\wwwroot\\views\\student\\ListClassesStudents\\Controller.js",

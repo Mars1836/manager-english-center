@@ -194,10 +194,10 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
     // $http.get('http://localhost:3000/api/v1/student')
     //    .then(function (response) {
     //        $scope.response = response.data;
-    //        vm.dtOptions.data = $scope.response.metadata;
+    //        vm.dtoptions.data = $scope.response.metadata;
     //    })
     //    .catch(function (error) {
-    //        console.error('Error:', error);
+    //        console.error('error:', error);
     //    });
 
     //$scope.register = function (id) {

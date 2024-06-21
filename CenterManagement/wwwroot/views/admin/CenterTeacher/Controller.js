@@ -138,26 +138,13 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
         DTColumnBuilder.newColumn('Email').withTitle('Email').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('maxStudents').withTitle('Học Viên tối đa').renderWith(function (data, type) {
-            return data;
+        DTColumnBuilder.newColumn('salary').withTitle('Tổng lương tháng này').renderWith(function (data, type) {
+            return data ;
         }),
-        DTColumnBuilder.newColumn('tuition').withTitle('Học phí lớp').renderWith(function (data, type) {
-            return data + "đ";
-        }),
-        DTColumnBuilder.newColumn('action').notSortable().withTitle('Thao tác').renderWith(function (data, type, full, meta) {
-            if (full.statusClasses == "Mở đăng ký") {
-                return '<button title="Các buổi học" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #3d9afb;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>' +
-                    '<button title="Đóng đăng ký" ng-click="lock(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #ff6000;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-key"></i></button>' +
-                    '<button title="Xóa" ng-click="delete(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #fe0000;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa fa-trash"></i></button>';
-            }
-            else if (full.statusClasses == "Đóng đăng ký") {
-                return '<button title="Các buổi học" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #3d9afb;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>' +
-                    '<button title="Mở đăng ký" ng-click="lock(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #47b35b;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-unlock-keyhole"></i></button>' +
-                    '<button title="Xóa" ng-click="delete(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #fe0000;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa fa-trash"></i></button>';
-            }
-            else
-                return '<button title="Các buổi học" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;margin-right: 7px;color: white;background: #3d9afb;padding-top: 1px; " class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>';
 
+        DTColumnBuilder.newColumn('action').notSortable().withTitle('Thao tác').renderWith(function (data, type, full, meta) {
+    
+            return ' <button type="button"  ng-click="pay(' + full.Id + ')" class="btn btn-gradient-danger btn-icon-text click-button" style="height: 30px; padding-left: 17px; padding-right: 17px;background: #07b113;align-items: center;display:flex;">Đăng ký</button > ';
         })
     ];
 
@@ -175,71 +162,7 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
     //        console.error('Error:', error);
     //    });
 
-    $scope.delete = function (id) {
-        var modalInstance = $uibModal.open({
-            templateUrl: ctxfolderMessage + '/messageConfirmDeleted.html',
-            windowClass: "message-center",
-            controller: function ($scope, $uibModalInstance) {
-                $scope.message = "Bạn có chắc chắn muốn xóa ?";
-                $scope.ok = function () {
-                    dataservice.delete(id, function (rs) {
-                        if (rs.Error) {
-                            App.toastrError(rs.Title);
-                        } else {
-                            App.toastrSuccess(rs.Title);
-                            $uibModalInstance.close();
-                        }
-                    });
-                };
-
-                $scope.cancel = function () {
-                    $uibModalInstance.dismiss('cancel');
-                };
-            },
-            size: '25',
-        });
-        modalInstance.result.then(function (d) {
-            $scope.reloadNoResetPage();
-        }, function () {
-        });
-    };
-
-    $scope.addClasses = function () {
-
-        var modalInstance = $uibModal.open({
-            animation: true,
-            templateUrl: ctxfolder + '/addClasses.html',
-            controller: 'addClasses',
-            backdrop: 'static',
-            size: 'lg',
-
-        });
-        modalInstance.opened.then(function () {
-
-            $('.modal').addClass('fade in');
-            $('.modal').css({
-                'display': 'block',
-                'visibility': 'visible',
-                'opacity': '1',
-                'left': '23%',
-                'overflow': 'hidden',
-                'overflow': 'visible'
-            });
-            var modalContentElement = angular.element(document.querySelector('.modal-content'));
-            modalContentElement.attr('style', 'top: 23px !important', 'position: relative');
-        });
 
 
-        modalInstance.rendered.then(function () {
-            var modalElement = angular.element(document.querySelector('.modal'));
-            modalElement.addClass('modal-lg');
-        });
 
-        modalInstance.result.then(function () {
-            $scope.reload();
-        }, function () {
-            console.log('Modal dismissed at: ' + new Date());
-        });
-    };
-
-});
+})

@@ -211,7 +211,6 @@ app.controller('attendance', function ($scope, $uibModalInstance, $rootScope, $h
         DTColumnBuilder.newColumn('id').withTitle('id').renderWith(function (data, type) {
             return data;
         }),
-
         DTColumnBuilder.newColumn('name').withTitle('Tên học viên').renderWith(function (data, type) {
             return data;
         }),
@@ -228,6 +227,11 @@ app.controller('attendance', function ($scope, $uibModalInstance, $rootScope, $h
             return data;
         }),
     ];
+
+
+
+
+
 
     vm.dtInstance = {};
     vm.dtOptions.data = [

@@ -40,6 +40,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTGVjdHVyZXJzXFZpZXdzXEhvbWVMZWN0dXJlcnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/LAP_Trinh_wed/WED-BLA/manager-english-center/CenterManagement/CenterManagement/Areas/Lecturers/Views/Schedule/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTGVjdHVyZXJzXFZpZXdzXFNjaGVkdWxlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/LAP_Trinh_wed/WED-BLA/manager-english-center/CenterManagement/CenterManagement/Areas/Lecturers/Views/Shared/_LayoutLecturers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTGVjdHVyZXJzXFZpZXdzXFNoYXJlZFxfTGF5b3V0TGVjdHVyZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

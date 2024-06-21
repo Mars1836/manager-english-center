@@ -534,6 +534,10 @@ app.controller('addGrades', function ($scope, $uibModalInstance, $rootScope, $co
     }
 
 
+
+
+
+
     $scope.ok = function () {
         $uibModalInstance.close();
     };

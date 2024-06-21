@@ -14686,3 +14686,28 @@ table.dataTable tbody td {
     height: 30px; /* Đặt chiều cao của các hàng là 60px */
   
 }
+
+.fc-event:hover {
+    width: max-content;
+    z-index: 1500;
+}
+
+.portlet.calendar .fc-event:hover {
+    background-color: #d17400;
+}
+
+.fc-content {
+    display: flex;
+    flex-direction: column;
+}
+.fc-tittle{
+    font-weight:bold;
+}
+.fc-time{
+    font-weight:bold;
+}
+
+
+.nav-profile-img img{
+    border-radius:50% !important;
+}
