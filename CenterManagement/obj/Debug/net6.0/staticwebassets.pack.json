@@ -809,6 +809,202 @@
       "PackagePath": "staticwebassets\\views\\admin\\CenterTeacher\\index.html"
     },
     {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\css\\animate.css",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\css\\flex-slider.css",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\css\\flex-slider.css"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\css\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\css\\owl.css",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\css\\owl.css"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\css\\templatemo-scholar.css",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\css\\templatemo-scholar.css"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\banner-bg.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\banner-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\banner-item-01.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\banner-item-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\banner-item-02.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\banner-item-02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\banner-item-03.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\banner-item-03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\contact-dec-01.png",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\contact-dec-01.png"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\contact-dec-02.png",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\contact-dec-02.png"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\course-01.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\course-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\course-02.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\course-02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\course-03.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\course-03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\course-04.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\course-04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\course-05.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\course-05.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\course-06.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\course-06.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\event-01.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\event-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\event-02.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\event-02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\event-03.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\event-03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\member-01.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\member-01.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\member-02.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\member-02.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\member-03.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\member-03.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\member-04.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\member-04.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\service-01.png",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\service-01.png"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\service-02.png",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\service-02.png"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\service-03.png",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\service-03.png"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\images\\testimonial-author.jpg",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\images\\testimonial-author.jpg"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\js\\counter.js",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\js\\counter.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\js\\custom.js",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\js\\isotope.min.js",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\js\\isotope.min.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\js\\owl-carousel.js",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\js\\owl-carousel.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\assets\\webfonts\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\views\\home\\assets\\webfonts\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\index.html",
+      "PackagePath": "staticwebassets\\views\\home\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\jquery\\jquery.js",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\jquery\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\jquery\\jquery.min.map",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\jquery\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\jquery\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\jquery\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\jquery\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\jquery\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\home\\vendor\\jquery\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\views\\home\\vendor\\jquery\\jquery.slim.min.map"
+    },
+    {
       "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\lecturers\\Attendance\\Controller.js",
       "PackagePath": "staticwebassets\\views\\lecturers\\Attendance\\Controller.js"
     },
@@ -833,16 +1029,12 @@
       "PackagePath": "staticwebassets\\views\\sign-in\\assets\\image\\backgroung0.jpg"
     },
     {
-      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\sign-in\\assets\\styles.css",
-      "PackagePath": "staticwebassets\\views\\sign-in\\assets\\styles.css"
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\sign-in\\assets\\styles_signup.css",
+      "PackagePath": "staticwebassets\\views\\sign-in\\assets\\styles_signup.css"
     },
     {
-      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\sign-in\\index.html",
-      "PackagePath": "staticwebassets\\views\\sign-in\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\sign-in\\script.js",
-      "PackagePath": "staticwebassets\\views\\sign-in\\script.js"
+      "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\sign-in\\script_signup.js",
+      "PackagePath": "staticwebassets\\views\\sign-in\\script_signup.js"
     },
     {
       "Id": "C:\\Users\\minhp\\Web\\manager-english-center\\CenterManagement\\wwwroot\\views\\sign-in\\sign-up.html",
