@@ -30,10 +30,6 @@ a:hover {
 input {
   font: 16px/26px "Raleway", sans-serif;
 }
-#remember_me.checkbox{
-  margin:0 0 10px 10%;
-
-}
 body {
   margin: auto;
   color: #666;
@@ -70,7 +66,14 @@ body {
   margin-top: 5%;
 }
 
-
+form #role-user{
+  margin: 0 0 12px 10%;
+  width: 30%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #cfcfcf;
+  color: #68530f;
+}
 
 form .input {
   border-radius: 5px;

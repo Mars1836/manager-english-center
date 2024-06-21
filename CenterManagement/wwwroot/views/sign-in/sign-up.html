@@ -13,10 +13,13 @@
         <form class="login-form" action="" method="post" >
         <input type="text" class="input" id="user_login" autocomplete="off" placeholder="Username"/>
         <input type="password" class="input" id="user_pass" autocomplete="off" placeholder="Password"/>
-        <div class="checkbox" id="remember_me">
-          <input type="checkbox"/>
-          <label for="remember_me">Remember me</label>
-        </div>
+        <select name="role-user" id="role-user">
+            <option value="student">Học sinh</option>
+            <option value="teacher">Giáo viên</option>
+            <option value="admin">Admin</option>
+            <option value="parents">Phụ huynh</option>
+        </select>
+        <br>
         <input type="submit" class="button" value="Login" />
         </form>
         <div class="help-text">
