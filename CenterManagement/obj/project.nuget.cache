@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dyJfrMTN96ubw6innaJmnjFx+QGLgAtVOYhfEq2zaMk3+yQsoIzeCC1XlHM33MfZTSwr3om7sw01kusmfaHkqQ==",
+  "dgSpecHash": "pP1/WpZKSJvN8k/PhnhDTnKZQkwTKSniP460933La3n9ElEPVlaIujn7A8aADdPdr1GvvSUVz0LZQm1fD50vew==",
   "success": true,
-  "projectFilePath": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\CenterManagement.csproj",
+  "projectFilePath": "F:\\LAP_Trinh_wed\\De_tai_WED_SUMIT\\manager-english-center\\CenterManagement\\CenterManagement\\CenterManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

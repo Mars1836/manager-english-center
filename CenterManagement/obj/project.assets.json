@@ -9683,11 +9683,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\CenterManagement.csproj",
+      "projectUniqueName": "F:\\LAP_Trinh_wed\\De_tai_WED_SUMIT\\manager-english-center\\CenterManagement\\CenterManagement\\CenterManagement.csproj",
       "projectName": "CenterManagement",
-      "projectPath": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\CenterManagement.csproj",
+      "projectPath": "F:\\LAP_Trinh_wed\\De_tai_WED_SUMIT\\manager-english-center\\CenterManagement\\CenterManagement\\CenterManagement.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "F:\\LAP_Trinh_wed\\WED-BLA\\manager-english-center\\CenterManagement\\CenterManagement\\obj\\",
+      "outputPath": "F:\\LAP_Trinh_wed\\De_tai_WED_SUMIT\\manager-english-center\\CenterManagement\\CenterManagement\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

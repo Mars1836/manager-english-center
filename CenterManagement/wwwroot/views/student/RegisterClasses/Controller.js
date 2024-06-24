@@ -200,33 +200,24 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
     //        console.error('error:', error);
     //    });
 
-    //$scope.register = function (id) {
-    //    var modalInstance = $uibModal.open({
-    //        templateUrl: ctxfolderMessage + '/messageConfirmDeleted.html',
-    //        windowClass: "message-center",
-    //        controller: function ($scope, $uibModalInstance) {
-    //            $scope.message = "Bạn có chắc chắn muốn xóa ?";
-    //            $scope.ok = function () {
-    //                dataservice.delete(id, function (rs) {
-    //                    if (rs.Error) {
-    //                        App.toastrError(rs.Title);
-    //                    } else {
-    //                        App.toastrSuccess(rs.Title);
-    //                        $uibModalInstance.close();
-    //                    }
-    //                });
-    //            };
+    $scope.submit = function () {
 
-    //            $scope.cancel = function () {
-    //                $uibModalInstance.dismiss('cancel');
-    //            };
-    //        },
-    //        size: '25',
-    //    });
-    //    modalInstance.result.then(function (d) {
-    //        $scope.reloadNoResetPage();
-    //    }, function () {
-    //    });
-    //};
+        dataservice.addClasses($scope.model, function (result) {
+            if (result.Error) {
+                App.toastrError(result.Title);
+            } else {
+                App.toastrSuccess(result.Title);
+                $uibModalInstance.close();
+                $rootScope.reload();
+            }
+            App.unblockUI("#contentMain");
+        });
+        $uibModalInstance.close();
+
+    }
+    $scope.cancel = function () {
+        $rootScope.lock_screen = !$rootScope.lock_screen;
+        $uibModalInstance.dismiss('cancel');
+    };
 
 });
