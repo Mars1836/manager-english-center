@@ -74,7 +74,7 @@ class StudentService {
       },
     ]);
     const a = rs.map((item) => {
-      return { ...item, class: classesOb[item._id] };
+      return { ...item, ...classesOb[item._id] };
     });
     return a;
   }

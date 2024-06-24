@@ -19,7 +19,6 @@ var studentSchema = new mongoose.Schema(
     gender: {
       type: String,
       enum: ["male", "female"],
-      required: true,
     },
     discount: {
       type: Number,
