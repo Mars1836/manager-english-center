@@ -39,7 +39,8 @@ class ClassService {
   static async findByStudent({ studentId }) {
     const classes = await classModel
       .find({ students: studentId })
-      .select("-students -__v -createdAt -updatedAt -id");
+      .select("-students -__v -createdAt -updatedAt -id")
+      .lean();
     return classes;
   }
   static async attendance({ lessonId, classId, studentAbsent }) {
