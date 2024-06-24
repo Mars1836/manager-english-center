@@ -12,31 +12,11 @@
 
 
 
-    <!-- Thư viện CSS -->
-    <link rel="stylesheet" href="LayoutAdmin/assets/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="LayoutAdmin/assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="LayoutAdmin/assets/css/style.css"> <!-- Đảm bảo rằng style.css được tải sau các file CSS khác -->
 
-
-
-    <link rel="shortcut icon" href="LayoutAdmin/assets/images/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    @*
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-resource.min.js"></script>*@
-
-
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 
     <style>
         .card {
-            background: #bfe0e7;
+            background: #ffffff;
         }
 
 
@@ -67,27 +47,43 @@
         }
     </style>
 
+    <link rel="stylesheet" href="LayoutAdmin/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="LayoutAdmin/assets/vendors/css/vendor.bundle.base.css">
+
+
+  
+    <link rel="shortcut icon" href="LayoutAdmin/assets/images/favicon.ico" />
+
+    @RenderSection("plugin_style", false)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    @* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
+    <link rel="stylesheet" href="LayoutAdmin/assets/css/style.css">
+
+
+    <!-- Link to jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Link to DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <!-- Link to DataTables JS -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <!-- Link to AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <!-- Link to Angular Route -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <!-- Link to Angular Resource -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-resource.min.js"></script>
+    <!-- Link to Angular UI Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    @*    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>*@
+    <!-- Link to Angular DataTables -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-datatables/0.6.4/angular-datatables.min.js"></script>
 
 
 
-
-
-
-    @* <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/angular/1.11.5/angular-datatables.min.js"></script>
-    *@
-
-    @RenderSection("plugin_style", false)
-
-
-    @RenderSection("plugin_script", false)
 
 
 
@@ -274,8 +270,8 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/Attendance">
-                            <span class="menu-title">Quản lý điểm danh</span>
+                        <a class="nav-link" href="/ScheduleTeacher">
+                            <span class="menu-title">Thời khóa biểu</span>
                             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
                         </a>
                     </li>
@@ -307,6 +303,9 @@
 
     <script src="LayoutAdmin/assets/js/dashboard.js"></script>
     <script src="LayoutAdmin/assets/js/todolist.js"></script>
+
+
+    @RenderSection("plugin_script", false)
 
 </body>
 </html>

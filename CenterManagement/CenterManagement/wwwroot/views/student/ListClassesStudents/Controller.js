@@ -116,7 +116,7 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
         DTColumnBuilder.newColumn('id').withTitle('ID').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('name').withTitle('Tên').renderWith(function (data, type) {
+        DTColumnBuilder.newColumn('subject').withTitle('Môn học').renderWith(function (data, type) {
             return data;
         }),
         DTColumnBuilder.newColumn('year').withTitle('Năm học').renderWith(function (data, type) {
@@ -125,22 +125,24 @@ app.controller('index', function ($scope, $compile, $rootScope, $http, $uibModal
         DTColumnBuilder.newColumn('grade').withTitle('Lớp').renderWith(function (data, type) {
             return data;
         }),
-        DTColumnBuilder.newColumn('Absent').withTitle('Đã nghỉ').renderWith(function (data, type) {
+        DTColumnBuilder.newColumn('totalLesson').withTitle('Tổng số buổi học').renderWith(function (data, type) {
             return data;
-        }),    
-        DTColumnBuilder.newColumn('action').notSortable().withTitle('Các buổi học').renderWith(function (data, type, full, meta) {
-            return '<button title="Chi tiết" ng-click="detail(' + full.Id + ')" style="width: 25px;pointer-events: auto !important; height: 25px; padding: 0px;-webkit-box-shadow: 0 2px 5px 0 rgb(0 3 6 / 97%);border-radius: 50%;" class="btn btn-icon-only btn-circle btn-outline-button-icon"><i class="fa-solid fa-eye"></i></button>';
-
-
-        })
+        }),       
+        DTColumnBuilder.newColumn('learned').withTitle('Số buổi đã dạy').renderWith(function (data, type) {
+            return data;
+        }),
+        DTColumnBuilder.newColumn('skipClass').withTitle('Đã nghỉ').renderWith(function (data, type) {
+            return `<span  class="text-danger">` + data +`</span>`;
+        }),
+ 
     ];
 
     vm.dtInstance = {};
 
     vm.dtOptions.data = [
-        { Id: 1, Class: '3.1A', Year: '01/01/2000', Absent: 2, Grade: 'Grade 1', Lession: {date:'ágfufew',topic:'hjewegh'} },
-        { Id: 2, Class: '25A', Year: '01/02/2000', Absent: 4, Grade: 'Grade 2', Lession: { date: 'ágfufew', topic: 'hjewegh' } },
-        { Id: 3, Class: '40A', Year: '01/03/2000', Absent: 7, Grade: 'Grade 3', Lession: { date: 'ágfufew', topic: 'hjewegh' } }
+        { Id: 1, subject: 'Listening', year: '2000', totalLesson: 15, learned: 2, grade: 'Grade 1', skipClass :1},
+        { Id: 2, subject: 'reading', year: '2000', totalLesson: 14, learned: 4, grade: 'Grade 2', skipClass:2 },
+        { Id: 3, subject: 'wishtkjths', year: '2000', totalLesson: 17, learned: 7, grade: 'Grade 3', skipClass :2}
     ];
     /*vm.dtOptions.data = $rootScope.studentData;*/
 
