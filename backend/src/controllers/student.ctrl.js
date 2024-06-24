@@ -15,6 +15,30 @@ class StudentCtrl {
       metadata: students,
     }).send(res);
   }
+  static async findByClass(req, res, next) {
+    const { classId } = req.query;
+    const students = await StudentService.findByClass({ classId }, req.query);
+    return new SuccessRespone({
+      message: "Get student",
+      metadata: students,
+    }).send(res);
+  }
+  static async getStatus(req, res, next) {
+    const { studentId } = req.params;
+    const rs = await StudentService.getStatus({ studentId });
+    return new SuccessRespone({
+      message: "Get status success",
+      metadata: rs,
+    }).send(res);
+  }
+  static async getStatusV2(req, res, next) {
+    const { studentId } = req.params;
+    const rs = await StudentService.getStatusV2({ studentId });
+    return new SuccessRespone({
+      message: "Get status success",
+      metadata: rs,
+    }).send(res);
+  }
   static async getInfor(req, res, next) {
     if (!req?.auth?.student) {
       return new Error("aaaaaaaaaaaaaaaaa");
@@ -23,6 +47,22 @@ class StudentCtrl {
     return new SuccessRespone({
       message: "Get infor success!",
       metadata: student,
+    }).send(res);
+  }
+  static async getSchedule(req, res, next) {
+    const { studentId } = req.params;
+    const rs = await StudentService.getSchedule({ studentId });
+    return new SuccessRespone({
+      message: "Get shedule success!",
+      metadata: rs,
+    }).send(res);
+  }
+  static async getTuition(req, res, next) {
+    const { studentId } = req.params;
+    const rs = await StudentService.getTuition({ studentId });
+    return new SuccessRespone({
+      message: "Get shedule success!",
+      metadata: rs,
     }).send(res);
   }
 }

@@ -1,3 +1,5 @@
+const { default: mongoose } = require("mongoose");
+
 function removeUnvalueField(_object) {
   for (const key in _object) {
     if (_object[key] === null || _object[key] === undefined) {
@@ -8,4 +10,7 @@ function removeUnvalueField(_object) {
   }
   return;
 }
-module.exports = { removeUnvalueField };
+function toObjectId(id) {
+  return new mongoose.Types.ObjectId(id);
+}
+module.exports = { removeUnvalueField, toObjectId };

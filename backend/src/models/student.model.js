@@ -21,6 +21,10 @@ var studentSchema = new mongoose.Schema(
       enum: ["male", "female"],
       required: true,
     },
+    discount: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     collection: COLLECTION_NAME,
