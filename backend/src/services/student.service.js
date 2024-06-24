@@ -1,4 +1,4 @@
-const { removeUnvalueField } = require("../utils");
+const { removeUnvalueField, toObjectId } = require("../utils");
 
 const teacherModel = require("../models/teacher.model");
 const classModel = require("../models/class.model");
@@ -6,6 +6,7 @@ const lessonModel = require("../models/lesson.model");
 const tuitionModel = require("../models/tuition.model");
 const { BadRequestError } = require("../core/error.reponse");
 const studentModel = require("../models/student.model");
+const ClassService = require("./class.service");
 class StudentService {
   static async findAll() {
     const students = await studentModel.find();
@@ -37,40 +38,100 @@ class StudentService {
     });
     return students;
   }
-  static async getStatus({ studentId }) {
-    // const classStore = await classModel.findById(classId);
-    // if (!classStore) {
-    //   throw new BadRequestError("Class does not exist");
-    // }
-    // if (!classStore.students.includes(studentId)) {
-    //   throw new BadRequestError("This student not in this class");
-    // }
-    const lesson1 = await lessonModel.find({
-      absent: studentId,
-    });
-
-    const lessons = await lessonModel.aggregate([
+  static async getStatusV2({ studentId }) {
+    const classes = await ClassService.findByStudent({ studentId });
+    const classIds = classes.map((item) => toObjectId(item._id));
+    const classesOb = classes.reduce((acc, cur) => {
+      acc[cur._id.toString()] = cur;
+      return acc;
+    }, {});
+    const rs = await lessonModel.aggregate([
       {
-        $facet: {
-          absentLessons: [
-            { $match: { absent: "66640e7af97700fcfddf05cd" } },
-            // { $group: { _id: "$classId", count: { $sum: 1 } } },
-          ],
-          presentLessons: [
-            { $match: { absent: { $ne: studentId } } },
-            { $group: { _id: "$classId", count: { $sum: 1 } } },
-          ],
-        },
+        $match: { classId: { $in: classIds }, isFinished: true },
       },
       {
-        $project: {
-          _id: 0,
-          absentLessons: 1,
-          presentLessons: 1,
+        $group: {
+          _id: "$classId",
+          countAbsent: {
+            $sum: {
+              $cond: {
+                if: { $in: [toObjectId(studentId), "$absent"] },
+                then: 1,
+                else: 0,
+              },
+            },
+          },
+          countPresent: {
+            $sum: {
+              $cond: {
+                if: { $in: [toObjectId(studentId), "$absent"] },
+                then: 0,
+                else: 1,
+              },
+            },
+          },
         },
       },
     ]);
-    return { lessons, lesson1 };
+    const a = rs.map((item) => {
+      return { ...item, class: classesOb[item._id] };
+    });
+    return a;
+  }
+  static async getStatus({ studentId }) {
+    // lấy danh sách nghỉ học của từng lớp học và danh sách có mặt của từng lớp học
+    const lessonResults = await lessonModel.aggregate([
+      { $match: { isFinished: true } },
+      {
+        $facet: {
+          absentLessons: [
+            { $match: { absent: toObjectId(studentId) } },
+            { $group: { _id: "$classId", count: { $sum: 1 } } },
+            { $project: { classId: "$_id", count: 1, _id: 0 } },
+          ],
+          presentLessons: [
+            { $match: { absent: { $ne: toObjectId(studentId) } } },
+            { $group: { _id: "$classId", count: { $sum: 1 } } },
+            { $project: { classId: "$_id", count: 1, _id: 0 } },
+          ],
+        },
+      },
+    ]);
+    console.log(lessonResults);
+    const absentLessons = lessonResults[0].absentLessons;
+    const presentLessons = lessonResults[0].presentLessons;
+
+    // Extract unique classIds from both absentLessons and presentLessons
+    const classIds = [
+      ...new Set([
+        ...absentLessons.map((lesson) => lesson.classId.toString()),
+        ...presentLessons.map((lesson) => lesson.classId.toString()),
+      ]),
+    ];
+
+    // Fetch class information for each classId
+    const classes = await classModel.find({
+      _id: { $in: classIds.map((id) => toObjectId(id)) },
+    });
+
+    // Create a map of classId to class data
+    const classMap = classes.reduce((map, classItem) => {
+      map[classItem._id.toString()] = classItem;
+      return map;
+    }, {});
+    // Attach class information to absentLessons and presentLessons
+    const result = {
+      absentLessons: absentLessons.map((lesson) => ({
+        ...lesson,
+        class: classMap[lesson.classId.toString()],
+      })),
+      presentLessons: presentLessons.map((lesson) => ({
+        ...lesson,
+        class: classMap[lesson.classId.toString()],
+      })),
+    };
+
+    return result;
   }
   static async create({ name, accountId, dob, gender }) {
     const student = await studentModel.create({

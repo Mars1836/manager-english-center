@@ -25,6 +25,23 @@ class ClassService {
 
     return { ..._class._doc, lessons: lessonRs };
   }
+  static async setStatus({ status, classId }) {
+    const rs = await classModel.findOneAndUpdate(
+      { _id: classId },
+      { status },
+      { new: true, runValidators: true }
+    );
+    if (!rs) {
+      throw new BadRequestError("Set class status failded!");
+    }
+    return rs;
+  }
+  static async findByStudent({ studentId }) {
+    const classes = await classModel
+      .find({ students: studentId })
+      .select("-students -__v -createdAt -updatedAt -id");
+    return classes;
+  }
   static async attendance({ lessonId, classId, studentAbsent }) {
     const _class = await classModel.findById(classId);
     if (!_class) {
@@ -52,14 +69,7 @@ class ClassService {
     }
     return udrs;
   }
-  static async addLesson({
-    classId,
-    topic,
-    date,
-    teacherId,
-    startTime,
-    endTime,
-  }) {
+  static async addLesson({ classId, topic, teacherId, startTime, endTime }) {
     const _class = await classModel.findById(classId);
     if (!_class) {
       throw new BadRequestError("Class provided does not exist");
@@ -67,7 +77,6 @@ class ClassService {
     const lesson = await lessonModel.create({
       classId,
       topic,
-      date,
       teacherId,
       startTime,
       endTime,

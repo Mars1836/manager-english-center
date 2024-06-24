@@ -31,6 +31,14 @@ class StudentCtrl {
       metadata: rs,
     }).send(res);
   }
+  static async getStatusV2(req, res, next) {
+    const { studentId } = req.params;
+    const rs = await StudentService.getStatusV2({ studentId });
+    return new SuccessRespone({
+      message: "Get status success",
+      metadata: rs,
+    }).send(res);
+  }
   static async getInfor(req, res, next) {
     if (!req?.auth?.student) {
       return new Error("aaaaaaaaaaaaaaaaa");

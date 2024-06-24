@@ -6,9 +6,8 @@ var lessonSChema = new mongoose.Schema(
   {
     // date: { type: Date, required: true },
     topic: { type: String, required: true },
-    date: { type: String, required: true },
-    startTime: { type: String, required: true },
-    endTime: { type: String, required: true },
+    startTime: { type: String, required: true }, //"2024-06-23T14:00:00"
+    endTime: { type: String, required: true }, //"2024-06-23T14:00:00"
     teacherId: { type: mongoose.Schema.Types.ObjectId, required: true },
     isFinished: { type: Boolean, default: false },
     absent: { type: [mongoose.Schema.Types.ObjectId], default: [] }, //student absent

@@ -12,7 +12,9 @@ classRouter.post(
 );
 classRouter.post("/", asyncHandle(ClassCtrl.create));
 classRouter.post("/add-lesson", asyncHandle(ClassCtrl.addLesson));
+classRouter.post("/set-status", asyncHandle(ClassCtrl.setStatus));
 classRouter.get("/lesson", asyncHandle(ClassCtrl.findLessonsByClass));
+classRouter.get("/student", asyncHandle(ClassCtrl.findByStudent));
 classRouter.patch("/attendance", asyncHandle(ClassCtrl.attendance));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
 
