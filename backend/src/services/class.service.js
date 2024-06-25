@@ -1,4 +1,4 @@
-const { removeUnvalueField } = require("../utils");
+const { removeUnvalueField, toObjectId } = require("../utils");
 
 const adminModel = require("../models/admin.model");
 const classModel = require("../models/class.model");
@@ -6,9 +6,23 @@ const lessonModel = require("../models/lesson.model");
 const { BadRequestError } = require("../core/error.reponse");
 const tuitionModel = require("../models/tuition.model");
 const studentModel = require("../models/student.model");
+const _ = require("lodash");
 class ClassService {
-  static async create({ name, year, grade, lessons = [], tuition }) {
-    const _class = await classModel.create({ name, year, grade, tuition });
+  static async create({
+    name,
+    year,
+    grade,
+    lessons = [],
+    tuition,
+    maxStudents,
+  }) {
+    const _class = await classModel.create({
+      name,
+      year,
+      grade,
+      tuition,
+      maxStudents,
+    });
     const lessonData = lessons.map((i) => {
       const { date, topic, teacherId } = i;
       return {
@@ -39,9 +53,26 @@ class ClassService {
   static async findByStudent({ studentId }) {
     const classes = await classModel
       .find({ students: studentId })
-      .select("-students -__v -createdAt -updatedAt -id")
+      .select(" -__v -createdAt -updatedAt -id")
+      .populate({
+        path: "lesson",
+        model: lessonModel,
+        select: "topic teacherId isFinished attendance",
+      })
       .lean();
-    return classes;
+    const rs = classes.map((item) => {
+      item.maxStudents = item?.lesson.length || 0;
+      item.registeredStudents = item?.students.length || 0;
+      item.statusClasses = item.status;
+      item.statusRegister =
+        item.students.findIndex((id) => {
+          return id.toString() === studentId;
+        }) > -1
+          ? true
+          : false;
+      return _.omit(item, ["lesson", "status"]);
+    });
+    return rs;
   }
   static async attendance({ lessonId, classId, studentAbsent }) {
     const _class = await classModel.findById(classId);
@@ -98,7 +129,7 @@ class ClassService {
         model: lessonModel,
         select: "topic teacherId isFinished attendance",
       })
-      .select("name year grade _id")
+      .select("-__v -createdAt -updatedAt")
       .lean();
     return classes;
   }

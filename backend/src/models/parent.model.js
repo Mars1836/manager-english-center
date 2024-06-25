@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"); // Erase if already required
 const COLLECTION_NAME = "Parents";
-const DOCUMENT_NAME = "parent";
+const DOCUMENT_NAME = "Parent";
 // Declare the Schema of the Mongo model
 var parentSchema = new mongoose.Schema(
   {
