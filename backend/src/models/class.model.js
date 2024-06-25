@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"); // Erase if already required
 const COLLECTION_NAME = "Classes";
-const DOCUMENT_NAME = "class";
+const DOCUMENT_NAME = "Class";
 // Declare the Schema of the Mongo model
 var classSchema = new mongoose.Schema(
   {
@@ -11,6 +11,10 @@ var classSchema = new mongoose.Schema(
     year: {
       type: Number,
       required: true,
+    },
+    maxStudents: {
+      type: Number,
+      default: 50,
     },
     grade: {
       type: Number,

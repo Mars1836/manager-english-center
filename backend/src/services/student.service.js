@@ -1,5 +1,5 @@
 const { removeUnvalueField, toObjectId } = require("../utils");
-
+const _ = require("lodash");
 const teacherModel = require("../models/teacher.model");
 const classModel = require("../models/class.model");
 const lessonModel = require("../models/lesson.model");
@@ -52,7 +52,7 @@ class StudentService {
       {
         $group: {
           _id: "$classId",
-          countAbsent: {
+          skipClass: {
             $sum: {
               $cond: {
                 if: { $in: [toObjectId(studentId), "$absent"] },
@@ -61,7 +61,7 @@ class StudentService {
               },
             },
           },
-          countPresent: {
+          learned: {
             $sum: {
               $cond: {
                 if: { $in: [toObjectId(studentId), "$absent"] },
@@ -74,7 +74,12 @@ class StudentService {
       },
     ]);
     const a = rs.map((item) => {
-      return { ...item, ...classesOb[item._id] };
+      let ob = {
+        ...item,
+        ...classesOb[item._id],
+        totalLesson: classesOb[item._id]?.lesson.length || 0,
+      };
+      return _.omit(ob, ["lesson"]);
     });
     return a;
   }
@@ -97,7 +102,6 @@ class StudentService {
         },
       },
     ]);
-    console.log(lessonResults);
     const absentLessons = lessonResults[0].absentLessons;
     const presentLessons = lessonResults[0].presentLessons;
 
@@ -152,15 +156,28 @@ class StudentService {
         students: studentId,
       })
       .lean();
+    const classMap = classes.map((i) => {
+      return;
+    });
     const classIds = classes.map((i) => {
       return i._id;
     });
-    const lesson = await lessonModel.find({
-      classId: {
-        $in: classIds,
-      },
+    const lesson = await lessonModel
+      .find({
+        classId: {
+          $in: classIds,
+        },
+      })
+      .select("-createdAt -updatedAt -__v -attendance")
+      .populate("teacherId")
+      .populate("classId")
+      .lean();
+    const rs = lesson.map((item) => {
+      item.name = item.classId.name;
+      item.teacher = item.teacherId.name;
+      return _.omit(item, ["teacherId", "classId"]);
     });
-    return lesson;
+    return rs;
   }
   static async getTuition({ studentId }) {
     const tuition = await tuitionModel.find({

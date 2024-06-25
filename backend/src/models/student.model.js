@@ -1,6 +1,6 @@
 const mongoose = require("mongoose"); // Erase if already required
 const COLLECTION_NAME = "Students";
-const DOCUMENT_NAME = "student";
+const DOCUMENT_NAME = "Student";
 // Declare the Schema of the Mongo model
 var studentSchema = new mongoose.Schema(
   {
