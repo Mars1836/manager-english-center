@@ -24,7 +24,7 @@ class StudentCtrl {
     }).send(res);
   }
   static async getStatus(req, res, next) {
-    const { studentId } = req.params;
+    const { studentId } = req.query;
     const rs = await StudentService.getStatus({ studentId });
     return new SuccessRespone({
       message: "Get status success",
@@ -32,7 +32,8 @@ class StudentCtrl {
     }).send(res);
   }
   static async getStatusV2(req, res, next) {
-    const { studentId } = req.params;
+    const { studentId } = req.query;
+    console.log(studentId);
     const rs = await StudentService.getStatusV2({ studentId });
     return new SuccessRespone({
       message: "Get status success",
@@ -50,7 +51,7 @@ class StudentCtrl {
     }).send(res);
   }
   static async getSchedule(req, res, next) {
-    const { studentId } = req.params;
+    const { studentId } = req.query;
     const rs = await StudentService.getSchedule({ studentId });
     return new SuccessRespone({
       message: "Get shedule success!",
@@ -58,7 +59,7 @@ class StudentCtrl {
     }).send(res);
   }
   static async getTuition(req, res, next) {
-    const { studentId } = req.params;
+    const { studentId } = req.query;
     const rs = await StudentService.getTuition({ studentId });
     return new SuccessRespone({
       message: "Get shedule success!",

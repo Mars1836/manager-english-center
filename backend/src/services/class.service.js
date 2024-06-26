@@ -39,6 +39,10 @@ class ClassService {
 
     return { ..._class._doc, lessons: lessonRs };
   }
+  static async getAbsentLesson({ studentId, classId }) {
+    const rs = await lessonModel.find({ absent: studentId, classId });
+    return rs;
+  }
   static async setStatus({ status, classId }) {
     const rs = await classModel.findOneAndUpdate(
       { _id: classId },
@@ -61,7 +65,7 @@ class ClassService {
       })
       .lean();
     const rs = classes.map((item) => {
-      item.maxStudents = item?.lesson.length || 0;
+      item.totalLesson = item?.lesson.length || 0;
       item.registeredStudents = item?.students.length || 0;
       item.statusClasses = item.status;
       item.statusRegister =
