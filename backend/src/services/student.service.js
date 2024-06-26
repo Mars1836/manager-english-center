@@ -39,12 +39,14 @@ class StudentService {
     return students;
   }
   static async getStatusV2({ studentId }) {
+    console.log(studentId);
     const classes = await ClassService.findByStudent({ studentId });
     const classIds = classes.map((item) => toObjectId(item._id));
     const classesOb = classes.reduce((acc, cur) => {
       acc[cur._id.toString()] = cur;
       return acc;
     }, {});
+
     const rs = await lessonModel.aggregate([
       {
         $match: { classId: { $in: classIds }, isFinished: true },
@@ -77,7 +79,7 @@ class StudentService {
       let ob = {
         ...item,
         ...classesOb[item._id],
-        totalLesson: classesOb[item._id]?.lesson.length || 0,
+        totalLesson: classesOb[item._id]?.totalLesson || 0,
       };
       return _.omit(ob, ["lesson"]);
     });

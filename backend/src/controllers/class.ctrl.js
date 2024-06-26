@@ -2,6 +2,14 @@ const { CreateSuccess, SuccessRespone } = require("../core/success.reponse");
 const ClassService = require("../services/class.service");
 
 class ClassCtrl {
+  static async getAbsentLesson(req, res, next) {
+    const { studentId, classId } = req.query;
+    const metadata = await ClassService.getAbsentLesson({ studentId, classId });
+    return new SuccessRespone({
+      message: "Get absent lessson of student success",
+      metadata,
+    }).send(res);
+  }
   static async findAll(req, res, next) {
     const metadata = await ClassService.findAll();
     return new SuccessRespone({
@@ -19,7 +27,7 @@ class ClassCtrl {
     }).send(res);
   }
   static async findByStudent(req, res, next) {
-    const { studentId } = req.params;
+    const { studentId } = req.query;
 
     const metadata = await ClassService.findByStudent({ studentId });
     return new SuccessRespone({
