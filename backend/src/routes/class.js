@@ -10,6 +10,10 @@ classRouter.post(
   // asyncHandle(verifyAsStudent),
   asyncHandle(ClassCtrl.studentEnroll)
 );
+classRouter.get(
+  "/absentlesson/student/:studentId",
+  asyncHandle(ClassCtrl.getAbsentLesson)
+);
 classRouter.post("/", asyncHandle(ClassCtrl.create));
 classRouter.post("/add-lesson", asyncHandle(ClassCtrl.addLesson));
 classRouter.post("/set-status", asyncHandle(ClassCtrl.setStatus));
