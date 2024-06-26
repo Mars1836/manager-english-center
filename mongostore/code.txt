@@ -1,1 +1,2 @@
- mongorestore --uri="mongodb+srv://hauvu:123123abc@cluster0.pper3tn.mongodb.net/englishCenterDEV?retryWrites=true&w=majority" D:\Code\Project\manager_english_center\mongostore\englishCenterDEV
+mongorestore --uri="mongodb+srv://hauvu:123123abc@cluster0.pper3tn.mongodb.net/englishCenterDEV?retryWrites=true&w=majority" D:\Code\Project\manager_english_center\mongostore\englishCenterDEV
+mongorestore --db testdb --verbose D:\Code\Project\manager_english_center\mongostore\englishCenterDEV
