@@ -13,6 +13,10 @@ var parentSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    studentId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Student",
+    },
     dob: {
       type: Date,
     },

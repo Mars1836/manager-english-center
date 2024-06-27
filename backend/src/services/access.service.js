@@ -34,12 +34,15 @@ function login(role) {
     if (!verifyPassword) {
       throw new BadRequestError("Username or password is not valid");
     }
-    const ob = await model.findOne({
-      accountId: account._id,
-    });
+    const ob = await model
+      .findOne({
+        accountId: account._id,
+      })
+      .lean();
     if (!ob) {
       throw new BadRequestError("User does not exist!");
     }
+    ob.role = account.role;
     const token = await tokenModel
       .findOne({
         objectId: ob._id,

@@ -1,18 +1,35 @@
 const { SuccessRespone } = require("../core/success.reponse");
 const { createToken } = require("../helpers/generate.key");
-const TeacherService = require("../services/student.service");
+const TeacherService = require("../services/teacher.service");
 
 class TeacherCtrl {
   static async findByQuery(req, res, next) {
     const { name, _id, age } = req.query;
-    const students = await TeacherService.findByQuery(
+    const teachers = await TeacherService.findByQuery(
       { name, _id, age },
       req.query
     );
-    // res.json(students);
+    // res.json(teachers);
     return new SuccessRespone({
       message: "Get teacher",
-      metadata: students,
+      metadata: teachers,
+    }).send(res);
+  }
+  static async getSchedule(req, res, next) {
+    const { teacherId } = req.query;
+    const teachers = await TeacherService.getSchedule({ teacherId });
+    // res.json(teachers);
+    return new SuccessRespone({
+      message: "Get teacher's schedule successful",
+      metadata: teachers,
+    }).send(res);
+  }
+  static async findAll(req, res, next) {
+    const teachers = await TeacherService.findAll();
+    // res.json(teachers);
+    return new SuccessRespone({
+      message: "Get teachers successful",
+      metadata: teachers,
     }).send(res);
   }
   static async getInfor(req, res, next) {

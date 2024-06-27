@@ -1,7 +1,21 @@
 const express = require("express");
 const asyncHandle = require("../helpers/async.handle");
 const AccessCtrl = require("../controllers/access.ctrl");
+const {
+  verifyAsStudent,
+  verifyAsAdmin,
+} = require("../middlewares/verifyToken");
 const accessRouter = express.Router();
+accessRouter.get(
+  "/verifytoken/student",
+  asyncHandle(verifyAsStudent),
+  asyncHandle(AccessCtrl.verified)
+);
+accessRouter.get(
+  "/verifytoken/admin",
+  asyncHandle(verifyAsAdmin),
+  asyncHandle(AccessCtrl.verified)
+);
 accessRouter.post("/signup/student", asyncHandle(AccessCtrl.studentSignUp));
 accessRouter.post("/signup/admin", asyncHandle(AccessCtrl.admintSignUp));
 accessRouter.post("/signup/teacher", asyncHandle(AccessCtrl.teacherSignUp));

@@ -25,6 +25,11 @@ var tokenSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    createdAt: {
+      type: Date,
+      expires: 864000,
+      default: Date.now(),
+    },
   },
   {
     collection: COLLECTION_NAME,

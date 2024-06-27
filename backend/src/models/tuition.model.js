@@ -28,6 +28,10 @@ var tuitionSchema = new mongoose.Schema(
       required: true,
       default: 0,
     },
+    paid: {
+      type: Number,
+      default: 0,
+    },
     isFinish: {
       type: Boolean,
       default: false,
