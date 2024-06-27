@@ -18,5 +18,13 @@ class PaymentCtl {
       metadata: p,
     }).send(res);
   }
+  static async paySalary(req, res, next) {
+    const p = await PaymentService.paySalary(req.body);
+    // res.json(parents);
+    return new SuccessRespone({
+      message: "Payment successful!",
+      metadata: p,
+    }).send(res);
+  }
 }
 module.exports = PaymentCtl;

@@ -4,7 +4,15 @@ const { removeUnvalueField } = require("../utils");
 
 class TeacherService {
   static async findAll() {
-    const teachers = await teacherModel.find();
+    const teachers = await teacherModel.find().lean();
+    teachers.map((tc) => {
+      if (!tc.dateOflastPaid) {
+        tc.isPaid = false;
+      } else {
+        tc.isPaid = tc.dateOflastPaid.getMonth() === new Date().getMonth();
+      }
+      return tc;
+    });
     return teachers;
   }
   static async findById(id) {

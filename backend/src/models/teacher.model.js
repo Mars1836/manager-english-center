@@ -24,6 +24,21 @@ var teacherScheme = new mongoose.Schema(
       type: String,
       enum: ["male", "female"],
     },
+    salary: {
+      type: Number,
+      default: 4000000,
+    },
+    prePaid: {
+      type: Number,
+      default: 0,
+    },
+    totalPaid: {
+      type: Number,
+      default: 0,
+    },
+    dateOflastPaid: {
+      type: Date,
+    },
   },
   {
     collection: COLLECTION_NAME,
