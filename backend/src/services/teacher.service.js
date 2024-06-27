@@ -1,4 +1,5 @@
 const teacherModel = require("../models/teacher.model");
+const lessonModel = require("../models/lesson.model");
 const { removeUnvalueField } = require("../utils");
 
 class TeacherService {
@@ -19,6 +20,10 @@ class TeacherService {
       ...query,
     });
     return teachers;
+  }
+  static async getSchedule({ teacherId }) {
+    const lessons = await lessonModel.find({ teacherId });
+    return lessons;
   }
   static async create({ name, accountId, dob, gender }) {
     const teacher = await teacherModel.create({

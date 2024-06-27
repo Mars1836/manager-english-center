@@ -1,39 +1,57 @@
 const { ErrorReponse, UnauthorizedError } = require("../core/error.reponse");
+const parentModel = require("../models/parent.model");
 const tokenModel = require("../models/token.model");
 const jwt = require("jsonwebtoken");
-const verify = (role) => {
+const verify = (roles) => {
   return async (req, res, next) => {
-    let id, accessToken, refeshToken;
-    if (role === "student") {
-      id = req.headers["x-s-id"];
-      accessToken = req.headers["x-s-accesstoken"];
-      refeshToken = req.headers["x-s-refreshtoken"];
-    }
-    if (role === "admin") {
-      id = req.headers["x-a-id"];
-      accessToken = req.headers["x-a-accesstoken"];
-      refeshToken = req.headers["x-a-refreshtoken"];
-    }
-    if (!id) {
-      throw new UnauthorizedError("This action require authentication!");
-    }
+    const key = "asdasd";
+    const accessToken =
+      req.headers["authorization"] &&
+      req.headers["authorization"].split(" ")[1];
     if (!accessToken) {
       throw new UnauthorizedError("This action require authentication!");
     }
+    // const token = await tokenModel.findOne({
+    //   objectId: id,
+    //   role: role,
+    // });
+    // if (!token) {
+    //   throw new UnauthorizedError("This action require authentication!");
+    // }
+    const decode = jwt.verify(accessToken, key);
     const token = await tokenModel.findOne({
-      objectId: id,
-      role: role,
+      objectId: decode._id,
     });
     if (!token) {
-      throw new UnauthorizedError("This action require authentication!");
+      throw new UnauthorizedError("Authenticate failed!");
     }
-    const decode = jwt.verify(accessToken, token.key);
-    (req.auth = {}), (req.auth[role] = {});
-    req.auth[role] = { id: decode._id };
-
+    if (!roles.includes(token.role)) {
+      throw new UnauthorizedError("Authenticate failed!");
+    }
+    (req.auth = {}), (req.auth[token.role] = {});
+    req.auth[token.role] = { id: decode._id };
+    if (token.role === "parent") {
+      const pr = await parentModel.findById(decode._id);
+      if (!pr) {
+        throw new UnauthorizedError(
+          "Authenticate failed because this parent doesn't exist"
+        );
+      }
+      if (pr.studentId) {
+        req.auth["student"] = { id: pr.studentId };
+      }
+    }
+    console.log(req.auth);
     next();
   };
 };
-const verifyAsStudent = verify("student");
-const verifyAsAdmin = verify("admin");
-module.exports = { verifyAsStudent, verifyAsAdmin };
+const verifyAsParent = verify(["parent"]);
+const verifyAsParentOrStudent = verify(["parent", "student"]);
+const verifyAsStudent = verify(["student"]);
+const verifyAsAdmin = verify(["admin"]);
+module.exports = {
+  verifyAsStudent,
+  verifyAsAdmin,
+  verifyAsParentOrStudent,
+  verifyAsParent,
+};

@@ -35,11 +35,39 @@ class ClassCtrl {
       metadata,
     }).send(res);
   }
+  static async findByParent(req, res, next) {
+    const { studentId, parentId } = req.query;
+
+    const metadata = await ClassService.findByParent({ studentId, parentId });
+    return new SuccessRespone({
+      message: "Get all class by parent success",
+      metadata,
+    }).send(res);
+  }
+  static async findByTeacher(req, res, next) {
+    const { teacherId } = req.query;
+    const metadata = await ClassService.findByTeacher({ teacherId });
+    return new SuccessRespone({
+      message: "Get all class by parent success",
+      metadata,
+    }).send(res);
+  }
   static async findByQuery() {}
   static async findLessonsByClass(req, res, next) {
-    const metadata = await ClassService.findLessonsByClass(req.body);
+    const metadata = await ClassService.findLessonsByClass(req.query);
     return new SuccessRespone({
       message: "Get all lessons success",
+      metadata,
+    }).send(res);
+  }
+  static async findLessonByTeacherAndClass(req, res, next) {
+    const { classId, teacherId } = req.query;
+    const metadata = await ClassService.findLessonByTeacherAndClass({
+      classId,
+      teacherId,
+    });
+    return new SuccessRespone({
+      message: "Get all lessons by teacher and class success",
       metadata,
     }).send(res);
   }
@@ -58,7 +86,7 @@ class ClassCtrl {
     }).send(res);
   }
   static async studentEnroll(req, res, next) {
-    const { studentId } = req.body;
+    const studentId = req.auth.student.id;
     const metadata = await ClassService.studentEnroll(
       // { studentId: req.auth.student.id },
       { studentId },

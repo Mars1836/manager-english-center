@@ -54,6 +54,25 @@ class ClassService {
     }
     return rs;
   }
+  static async findByTeacher({ teacherId }) {
+    const lesson = await lessonModel.find({ teacherId }).lean();
+    const classIds = lesson.map((i) => {
+      return i.classId.toString();
+    });
+    const classIdsd = classIds.filter((item, index, arr) => {
+      if (
+        index ===
+        arr.findIndex((item2) => {
+          return item2.toString() === item.toString();
+        })
+      ) {
+        return true;
+      }
+      return false;
+    });
+    const classes = await classModel.find({ _id: classIdsd });
+    return classes;
+  }
   static async findByStudent({ studentId }) {
     const classes = await classModel
       .find({ students: studentId })
@@ -74,6 +93,43 @@ class ClassService {
         }) > -1
           ? true
           : false;
+      return _.omit(item, ["lesson", "status"]);
+    });
+    return rs;
+  }
+  static async findLessonByTeacherAndClass({ classId, teacherId }) {
+    const lesson = await lessonModel.find({ teacherId, classId }).lean();
+    return lesson;
+  }
+  static async findByParent({ studentId, parentId }) {
+    const tuition = await tuitionModel.find({ studentId }).lean();
+    const tuitionMap = tuition.reduce((pre, acc) => {
+      pre[acc.classId] = acc;
+      return pre;
+    }, {});
+    console.log(tuitionMap);
+    const classes = await classModel
+      .find({ students: studentId })
+      .select(" -__v -createdAt -updatedAt -id")
+      .populate({
+        path: "lesson",
+        model: lessonModel,
+        select: "topic teacherId isFinished attendance",
+      })
+      .lean();
+    const rs = classes.map((item) => {
+      item.totalLesson = item?.lesson.length || 0;
+      item.registeredStudents = item?.students.length || 0;
+      item.statusClasses = item.status;
+      // item.bill = tuitionMap[item._id];
+      item.statusRegister =
+        item.students.findIndex((id) => {
+          return id.toString() === studentId;
+        }) > -1
+          ? true
+          : false;
+      item.tuition = tuitionMap[item._id].last_cost;
+      item.paid = tuitionMap[item._id].paid;
       return _.omit(item, ["lesson", "status"]);
     });
     return rs;

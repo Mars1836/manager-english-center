@@ -3,6 +3,11 @@ const AccessService = require("../services/access.service");
 const StudentService = require("../services/student.service");
 
 class AccessCtrl {
+  static async verified(req, res, next) {
+    return new SuccessRespone({
+      message: "Verified",
+    }).send(res);
+  }
   static async studentSignUp(req, res, next) {
     const metadata = await AccessService.studentSignUp(req.body);
 

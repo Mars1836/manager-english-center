@@ -38,10 +38,16 @@ class StudentService {
     });
     return students;
   }
-  static async getStatusV2({ studentId }) {
-    console.log(studentId);
+  static async getStatusV3({ studentId }) {
     const classes = await ClassService.findByStudent({ studentId });
     const classIds = classes.map((item) => toObjectId(item._id));
+    const tuition = await tuitionModel.find({ studentId });
+    const tuitionOb = tuition.reduce((acc, cur) => {
+      acc[cur.classId.toString()] = cur;
+      return acc;
+    }, {});
+    console.log("tuition", tuitionOb);
+
     const classesOb = classes.reduce((acc, cur) => {
       acc[cur._id.toString()] = cur;
       return acc;
@@ -76,10 +82,64 @@ class StudentService {
       },
     ]);
     const a = rs.map((item) => {
+      console.log(item._id);
       let ob = {
         ...item,
         ...classesOb[item._id],
         totalLesson: classesOb[item._id]?.totalLesson || 0,
+        tuition: tuitionOb[item._id.toString()].last_cost,
+        paid: tuitionOb[item._id.toString()].paid,
+      };
+      return _.omit(ob, ["lesson"]);
+    });
+    return a;
+  }
+  static async getStatusV2({ studentId }) {
+    const classes = await ClassService.findByStudent({ studentId });
+    const classIds = classes.map((item) => toObjectId(item._id));
+    const classesOb = classes.reduce((acc, cur) => {
+      acc[cur._id.toString()] = cur;
+      return acc;
+    }, {});
+    const tuitions = await tuitionModel.find({ studentId });
+    const tuitionRe = tuitions.reduce((acc, cur) => {
+      acc[cur.classId.toString()] = cur;
+      return acc;
+    }, {});
+    const rs = await lessonModel.aggregate([
+      {
+        $match: { classId: { $in: classIds }, isFinished: true },
+      },
+      {
+        $group: {
+          _id: "$classId",
+          skipClass: {
+            $sum: {
+              $cond: {
+                if: { $in: [toObjectId(studentId), "$absent"] },
+                then: 1,
+                else: 0,
+              },
+            },
+          },
+          learned: {
+            $sum: {
+              $cond: {
+                if: { $in: [toObjectId(studentId), "$absent"] },
+                then: 0,
+                else: 1,
+              },
+            },
+          },
+        },
+      },
+    ]);
+    const a = rs.map((item) => {
+      let ob = {
+        ...item,
+        ...classesOb[item._id],
+        tuition: tuitionRe[item._id.toString()].last_cost,
+        paid: tuitionRe[item._id.toString()].paid,
       };
       return _.omit(ob, ["lesson"]);
     });
