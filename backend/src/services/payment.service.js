@@ -1,7 +1,19 @@
 const { BadRequestError } = require("../core/error.reponse");
+const teacherModel = require("../models/teacher.model");
 const tuitionModel = require("../models/tuition.model");
 
 class PaymentService {
+  static async paySalary({ teacherId, money }) {
+    const teacher = await teacherModel.findById(teacherId);
+    if (!teacher) {
+      throw new BadRequestError("This teacher does not exist!");
+    }
+    const moneyPaid = money ?? teacher.salary;
+    teacher.dateOflastPaid = Date.now();
+    teacher.prePaid = moneyPaid;
+    teacher.totalPaid += moneyPaid;
+    return await teacher.save();
+  }
   static async cardPayment({
     cardNumber,
     ccv,
