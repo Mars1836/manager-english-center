@@ -2,7 +2,7 @@
 
 # Introdution
 
-# Thành viên nhóm:           
+Thành viên nhóm:           
 
     - Đặng Minh Phương          CT060331
     
