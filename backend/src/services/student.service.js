@@ -96,6 +96,7 @@ class StudentService {
   }
   static async getStatusV2({ studentId }) {
     const classes = await ClassService.findByStudent({ studentId });
+    console.log(classes);
     const classIds = classes.map((item) => toObjectId(item._id));
     const classesOb = classes.reduce((acc, cur) => {
       acc[cur._id.toString()] = cur;
@@ -137,13 +138,32 @@ class StudentService {
     const a = rs.map((item) => {
       let ob = {
         ...item,
-        ...classesOb[item._id],
         tuition: tuitionRe[item._id.toString()].last_cost,
         paid: tuitionRe[item._id.toString()].paid,
       };
       return _.omit(ob, ["lesson"]);
     });
-    return a;
+    const aRe = a.reduce((pre, cur) => {
+      pre[cur._id.toString()] = cur;
+      return pre;
+    }, {});
+    const classHandle = classes.map((item) => {
+      const status = aRe[item._id] || {
+        skipClass: 0,
+        learned: 0,
+      };
+      const map = {
+        tuition: tuitionRe[item._id.toString()].last_cost,
+        paid: tuitionRe[item._id.toString()].paid,
+      };
+      const i1 = {
+        ...item,
+        ...map,
+        ...status,
+      };
+      return _.omit(i1, ["year"]);
+    });
+    return classHandle;
   }
   static async getStatus({ studentId }) {
     // lấy danh sách nghỉ học của từng lớp học và danh sách có mặt của từng lớp học

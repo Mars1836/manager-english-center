@@ -23,6 +23,9 @@ class PaymentService {
     classId,
   }) {
     const tuition = await tuitionModel.findOne({ studentId, classId });
+    if (!tuition) {
+      throw new BadRequestError(`StudentId or classId is not valid`);
+    }
     if (tuition.isFinish) {
       throw new BadRequestError(
         `You have already completed payment for this class!`

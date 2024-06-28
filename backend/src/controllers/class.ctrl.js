@@ -1,7 +1,17 @@
 const { CreateSuccess, SuccessRespone } = require("../core/success.reponse");
 const ClassService = require("../services/class.service");
+const LessonService = require("../services/lesson.service");
 
 class ClassCtrl {
+  static async checkConflict(req, res, next) {
+    console.log(req.query);
+    const { classId, studentId } = req.query;
+    const metadata = await LessonService.checkConflict({ classId, studentId });
+    return new SuccessRespone({
+      message: "Check conflict",
+      metadata,
+    }).send(res);
+  }
   static async getAbsentLesson(req, res, next) {
     const { classId } = req.query;
     const metadata = await ClassService.getAbsentLesson({
