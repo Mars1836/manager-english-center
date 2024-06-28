@@ -50,7 +50,7 @@ Cấu trúc dự án:
 - Thư mục routes:
 - Thư mục services:
 - Thư mục utils:
-- 
+
 Một số framework làm front-end:
 
 - Boostrap.
@@ -70,7 +70,7 @@ Có thể chạy trên Visual Studio hoặc Visual Studio Code. Trong trường 
 - Bước 1: Mở thư mục backend (Chứa thư mục node_modules và src).
 - Bước 2: Chạy lệnh: npm i.
 - Bước 3: Chạy lệnh npm start.
-- 
+
 *Chạy phần front-end:
 - Bước 1: Chạy lệnh: cd CenterManagement (Thư mục gốc chứa file .sln).
 - Bước 2: Chạy lệnh: dotnet build.
