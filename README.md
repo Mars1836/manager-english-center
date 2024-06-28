@@ -16,6 +16,7 @@ Công việc của từng thành viên trong nhóm:
 - Hưng, Phương: Xây dựng giao diện người dùng.
 
 Các bước cài đặt project.
+
 Điều kiện tiên quyết:
 
 SDKs .NET 6.0: Cần tải SDKs .NET 6.0 từ trang chính thức của microsoft (https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer).
@@ -49,7 +50,9 @@ Cấu trúc dự án:
 - Thư mục routes:
 - Thư mục services:
 - Thư mục utils:
+- 
 Một số framework làm front-end:
+
 - Boostrap
 - AngularJS
 
