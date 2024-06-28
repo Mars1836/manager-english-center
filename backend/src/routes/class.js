@@ -3,7 +3,10 @@ const express = require("express");
 const asyncHandle = require("../helpers/async.handle");
 
 const ClassCtrl = require("../controllers/class.ctrl");
-const { verifyAsStudent } = require("../middlewares/verifyToken");
+const {
+  verifyAsStudent,
+  verifyAsParentOrStudent,
+} = require("../middlewares/verifyToken");
 const classRouter = express.Router();
 classRouter.post(
   "/student-enroll",
@@ -12,6 +15,7 @@ classRouter.post(
 );
 classRouter.get(
   "/absentlesson/student",
+  asyncHandle(verifyAsParentOrStudent),
   asyncHandle(ClassCtrl.getAbsentLesson)
 );
 classRouter.post("/", asyncHandle(ClassCtrl.create));

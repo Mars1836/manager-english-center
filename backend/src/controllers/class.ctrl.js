@@ -3,8 +3,11 @@ const ClassService = require("../services/class.service");
 
 class ClassCtrl {
   static async getAbsentLesson(req, res, next) {
-    const { studentId, classId } = req.query;
-    const metadata = await ClassService.getAbsentLesson({ studentId, classId });
+    const { classId } = req.query;
+    const metadata = await ClassService.getAbsentLesson({
+      studentId: req.auth.student.id,
+      classId,
+    });
     return new SuccessRespone({
       message: "Get absent lessson of student success",
       metadata,
