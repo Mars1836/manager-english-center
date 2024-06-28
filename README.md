@@ -28,6 +28,7 @@ NodeJs: Cần tải Node.js từ trang chính thức (https://nodejs.org/en). Qu
 Môi trường phát triển (IDE): Có thể dùng bất kỳ môi trường phát triển tích hợp nào như Visual Studio Code, WebStorm hoặc Atom. Trong trường hợp này ta sẽ sử dụng Visual Studio Code.
 
 Cài đặt extension C# Dev Kit vào Visual Studio Code.
+
 Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm install(nếu lỗi thiếu thư viện thì lại nhập vô) - Nhập npm start -> enter (hoặc sử dụng yarn start - nên dùng yarn) - Sau khi tiến trình kết thúc nếu có thư mục node_modules tức là đã cài thành công.
 
 Cấu trúc dự án:
