@@ -7,6 +7,7 @@ const { BadRequestError } = require("../core/error.reponse");
 const tuitionModel = require("../models/tuition.model");
 const studentModel = require("../models/student.model");
 const _ = require("lodash");
+const StudentService = require("./student.service");
 class ClassService {
   static async create({
     name,
@@ -40,8 +41,18 @@ class ClassService {
     return { ..._class._doc, lessons: lessonRs };
   }
   static async getAbsentLesson({ studentId, classId }) {
-    const rs = await lessonModel.find({ absent: studentId, classId });
-    return rs;
+    const rs = await lessonModel
+      .find({ absent: studentId, classId })
+      .populate("teacherId")
+      .lean();
+    const data = rs.map((item) => {
+      const re = {
+        ...item,
+        teacher: item.teacherId.name,
+      };
+      return _.omit(re, ["teacherId"]);
+    });
+    return data;
   }
   static async setStatus({ status, classId }) {
     const rs = await classModel.findOneAndUpdate(
@@ -75,7 +86,7 @@ class ClassService {
   }
   static async findByStudent({ studentId }) {
     const classes = await classModel
-      .find({ students: studentId })
+      .find()
       .select(" -__v -createdAt -updatedAt -id")
       .populate({
         path: "lesson",
@@ -192,6 +203,11 @@ class ClassService {
       .select("-__v -createdAt -updatedAt")
       .lean();
     return classes;
+  }
+  static async checkConflict({ studentId, classId }) {
+    const lesson = await StudentService.getSchedule(studentId);
+    const lesson2 = await lessonModel.find(classId);
+    return { lesson, lesson2 };
   }
   static async studentEnroll({ studentId }, { classId }) {
     const classStore = await classModel.findById(classId);
