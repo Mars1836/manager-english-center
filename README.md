@@ -1,8 +1,8 @@
-#Dự án website quản lý trung tâm tiếng anh
+# Dự án website quản lý trung tâm tiếng anh
 
-#Introdution
+# Introdution
 
-#Thành viên nhóm:           
+# Thành viên nhóm:           
 
     - Đặng Minh Phương          CT060331
     
@@ -10,12 +10,12 @@
     
     - Vũ Công Hậu               CT060111
 
-#Công việc của từng thành viên trong nhóm:
+# Công việc của từng thành viên trong nhóm:
 - Hậu: Xây dựng Database, viết API
 
 - Hưng, Phương: Xây dựng giao diện người dùng.
 
-#Các bước cài đặt project.
+# Các bước cài đặt project.
 
 Điều kiện tiên quyết:
 
@@ -31,7 +31,7 @@ Cài đặt extension C# Dev Kit vào Visual Studio Code.
 
 Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm install(nếu lỗi thiếu thư viện thì lại nhập vô) - Nhập npm start -> enter (hoặc sử dụng yarn start - nên dùng yarn) - Sau khi tiến trình kết thúc nếu có thư mục node_modules tức là đã cài thành công.
 
-#Cấu trúc dự án:
+# Cấu trúc dự án:
 
 *Front-end
 - Thư mục wwwroot: chứa các thư mục phụ trợ cho các màn chính tại Areas và Views.
@@ -52,18 +52,18 @@ Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm inst
 - Thư mục services:
 - Thư mục utils:
 
-#Một số framework làm front-end:
+# Một số framework làm front-end:
 
 - Boostrap.
 - AngularJS.
 
-#Định hướng làm CSDL sử dụng MongoDB.
+# Định hướng làm CSDL sử dụng MongoDB.
 
-#Một số framework làm back-end:
+# Một số framework làm back-end:
 - ExpressJS.
 - ASP.NET.
 
-#Chạy project:
+# Chạy project:
 
 Có thể chạy trên Visual Studio hoặc Visual Studio Code. Trong trường hợp này ta dùng Visual Studio Code
 
