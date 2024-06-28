@@ -12,7 +12,7 @@ Thành viên nhóm:
 
 Công việc của từng thành viên trong nhóm:
 - Hậu: Xây dựng Database, viết API
-- 
+
 - Hưng, Phương: Xây dựng giao diện người dùng.
 
 Các bước cài đặt project.
