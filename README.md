@@ -41,8 +41,8 @@ Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm inst
 - Thư mục Properties: Chứa file deploy.
 
 *Back-end
-- Thư mục configs:
-- Thư mục controllers:
+- Thư mục configs: Chứa các file cài đặt
+- Thư mục controllers: 
 - Thư mục core:
 - Thư mục dbs:
 - Thư mục helpers:
