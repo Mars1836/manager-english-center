@@ -49,9 +49,11 @@ const verifyAsParent = verify(["parent"]);
 const verifyAsParentOrStudent = verify(["parent", "student"]);
 const verifyAsStudent = verify(["student"]);
 const verifyAsAdmin = verify(["admin"]);
+const verifyAsTeacher = verify(["teacher"]);
 module.exports = {
   verifyAsStudent,
   verifyAsAdmin,
   verifyAsParentOrStudent,
   verifyAsParent,
+  verifyAsTeacher,
 };

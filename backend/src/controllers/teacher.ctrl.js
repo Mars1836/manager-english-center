@@ -16,8 +16,9 @@ class TeacherCtrl {
     }).send(res);
   }
   static async getSchedule(req, res, next) {
-    const { teacherId } = req.query;
-    const teachers = await TeacherService.getSchedule({ teacherId });
+    const teachers = await TeacherService.getSchedule({
+      teacherId: req.auth.teacher.id,
+    });
     // res.json(teachers);
     return new SuccessRespone({
       message: "Get teacher's schedule successful",
@@ -36,7 +37,7 @@ class TeacherCtrl {
     if (!req?.auth?.teacher) {
       return new Error("This requess requires authentication");
     }
-    const student = await TeacherService.getInfor({ id: req.auth.student.id });
+    const student = await TeacherService.getInfor({ id: req.auth.teacher.id });
     return new SuccessRespone({
       message: "Get infor success!",
       metadata: student,
