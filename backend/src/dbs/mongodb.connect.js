@@ -2,14 +2,14 @@
 const { default: mongoose } = require("mongoose");
 const { mongodb } = require("../configs/config.mongodb");
 const connectString = `mongodb://${mongodb.host}:${mongodb.port}/${mongodb.name}`;
-const connectStringdocker = `mongodb://${mongodb.host}:${mongodb.port}/${mongodb.name}`;
+const connectString2 = process.env.MONGOATLAS;
 class MongooDB {
   constructor() {
     this.connect();
   }
   async connect() {
     mongoose
-      .connect(connectString)
+      .connect(connectString2)
       .then((_) => {
         console.log("Connected mongodb success!!!");
       })
