@@ -1,6 +1,6 @@
 Dự án website quản lý trung tâm tiếng anh
 Introdution
-Thành viên nhóm:                MSV:
+Thành viên nhóm:           
 
     - Đặng Minh Phương          CT060331
     
