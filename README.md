@@ -34,10 +34,10 @@ Cấu trúc dự án:
 
 *Front-end
 - Thư mục wwwroot: chứa các thư mục phụ trợ cho các màn chính tại Areas và Views.
-- Thư mục Views: Chứa màn hình chính của trang web (Hiển thị đầu tiên khi truy cập)
-- Thư mục Areas: Chứa các màn chức năng khi đăng nhập với các vai trò cụ thể (Admin, Học sinh, Giáo viên, Phụ huynh)
-- Thư mục Controllers: Gắn router cho màn chính (Views)
-- Thư mục Properties: Chứa file deploy
+- Thư mục Views: Chứa màn hình chính của trang web (Hiển thị đầu tiên khi truy cập).
+- Thư mục Areas: Chứa các màn chức năng khi đăng nhập với các vai trò cụ thể (Admin, Học sinh, Giáo viên, Phụ huynh).
+- Thư mục Controllers: Gắn router cho màn chính (Views).
+- Thư mục Properties: Chứa file deploy.
 
 *Back-end
 - Thư mục configs:
@@ -53,24 +53,28 @@ Cấu trúc dự án:
 - 
 Một số framework làm front-end:
 
-- Boostrap
-- AngularJS
+- Boostrap.
+- AngularJS.
 
-Định hướng làm CSDL sử dụng MongoDB
+Định hướng làm CSDL sử dụng MongoDB.
 
 Một số framework làm back-end:
-- ExpressJS
-- ASP.NET
+- ExpressJS.
+- ASP.NET.
 
 Chạy project
+
 Có thể chạy trên Visual Studio hoặc Visual Studio Code. Trong trường hợp này ta dùng Visual Studio Code
-*Chạy phần back-end
-Bước 1: Mở thư mục backend (Chứa thư mục node_modules và src)
-Bước 2: Chạy lệnh: npm i
-Bước 3: Chạy lệnh npm start
-*Chạy phần front-end
-Bước 1: Chạy lệnh: cd CenterManagement (Thư mục gốc chứa file .sln)
-Bước 2: Chạy lệnh: dotnet build
-Bước 3: Chạy lệnh: cd CenterManagement (Thư mục con của thư mục gốc tại bước 1)
-Bước 4: Chạy lệnh: dotnet run
+
+*Chạy phần back-end:
+- Bước 1: Mở thư mục backend (Chứa thư mục node_modules và src).
+- Bước 2: Chạy lệnh: npm i.
+- Bước 3: Chạy lệnh npm start.
+- 
+*Chạy phần front-end:
+- Bước 1: Chạy lệnh: cd CenterManagement (Thư mục gốc chứa file .sln).
+- Bước 2: Chạy lệnh: dotnet build.
+- Bước 3: Chạy lệnh: cd CenterManagement (Thư mục con của thư mục gốc tại bước 1).
+- Bước 4: Chạy lệnh: dotnet run.
+
 Nếu chạy trên Visual Studio thì mở file .sln sau đó bấm Ctrl + F5
