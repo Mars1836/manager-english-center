@@ -7,7 +7,11 @@ const { BadRequestError } = require("../core/error.reponse");
 const tuitionModel = require("../models/tuition.model");
 const studentModel = require("../models/student.model");
 const _ = require("lodash");
-const StudentService = require("./student.service");
+const {
+  checkConflictStudentEnroll,
+  checkConflictAddTeacherToLesson,
+} = require("./lesson.service");
+// const StudentService = require("./student.service");
 class ClassService {
   static async create({
     name,
@@ -86,7 +90,7 @@ class ClassService {
   }
   static async findByStudent({ studentId }) {
     const classes = await classModel
-      .find()
+      .find({ students: studentId })
       .select(" -__v -createdAt -updatedAt -id")
       .populate({
         path: "lesson",
@@ -118,7 +122,6 @@ class ClassService {
       pre[acc.classId] = acc;
       return pre;
     }, {});
-    console.log(tuitionMap);
     const classes = await classModel
       .find({ students: studentId })
       .select(" -__v -createdAt -updatedAt -id")
@@ -173,9 +176,15 @@ class ClassService {
     return udrs;
   }
   static async addLesson({ classId, topic, teacherId, startTime, endTime }) {
+    const ls = { classId, topic, teacherId, startTime, endTime };
     const _class = await classModel.findById(classId);
     if (!_class) {
       throw new BadRequestError("Class provided does not exist");
+    }
+    if (checkConflictAddTeacherToLesson({ teacherId, ls })) {
+      throw new BadRequestError(
+        "Unable to add teacher to this lesson due to scheduling conflicts"
+      );
     }
     const lesson = await lessonModel.create({
       classId,
@@ -205,8 +214,8 @@ class ClassService {
     return classes;
   }
   static async checkConflict({ studentId, classId }) {
-    const lesson = await StudentService.getSchedule(studentId);
-    const lesson2 = await lessonModel.find(classId);
+    const lesson = await StudentService.getSchedule({ studentId });
+    const lesson2 = await lessonModel.find({ classId });
     return { lesson, lesson2 };
   }
   static async studentEnroll({ studentId }, { classId }) {
@@ -217,6 +226,11 @@ class ClassService {
     }
     if (!studentStore) {
       throw new BadRequestError("Student does not exist.");
+    }
+    if (checkConflictStudentEnroll({ studentId, classId })) {
+      throw new BadRequestError(
+        "Unable to register for class due to scheduling conflicts."
+      );
     }
     const query = {
       _id: classId,

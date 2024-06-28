@@ -25,6 +25,7 @@ classRouter.get("/lesson", asyncHandle(ClassCtrl.findLessonsByClass));
 classRouter.get("/student", asyncHandle(ClassCtrl.findByStudent));
 classRouter.get("/parent", asyncHandle(ClassCtrl.findByParent));
 classRouter.get("/teacher", asyncHandle(ClassCtrl.findByTeacher));
+classRouter.get("/check-conflict", asyncHandle(ClassCtrl.checkConflict));
 classRouter.get(
   "/lesson/teacher",
   asyncHandle(ClassCtrl.findLessonByTeacherAndClass)

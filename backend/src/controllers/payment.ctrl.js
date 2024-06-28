@@ -4,7 +4,6 @@ const PaymentService = require("../services/payment.service");
 class PaymentCtl {
   static async cardPayment(req, res, next) {
     const { cardNumber, ccv, money, classId } = req.body;
-    console.log(req.auth);
     const p = await PaymentService.cardPayment({
       cardNumber,
       ccv,
