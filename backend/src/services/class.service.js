@@ -154,7 +154,7 @@ class ClassService {
       const sts = _class.students.map((st) => {
         let isAbsent;
         if (!ls.isFinished) {
-          isAbsent = false;
+          isAbsent = true;
         } else {
           isAbsent =
             ls.absent.findIndex((ab) => {
