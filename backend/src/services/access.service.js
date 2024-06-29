@@ -1,12 +1,14 @@
 const bcrypt = require("bcrypt");
 const studentModel = require("../models/student.model");
 const accountModel = require("../models/account.model");
-const StudentService = require("./student.service");
 const TokenService = require("./token.service");
 const tokenModel = require("../models/token.model");
 const { BadRequestError } = require("../core/error.reponse");
 const adminModel = require("../models/admin.model");
 const AdminService = require("./admin.service");
+const StudentService = require("./student.service");
+const ParentService = require("./parent.service");
+const TeacherService = require("./teacher.service");
 const teacherModel = require("../models/teacher.model");
 const parentModel = require("../models/parent.model");
 
@@ -69,14 +71,19 @@ function login(role) {
 }
 function signUp(role) {
   let model;
+  let service;
   if (role === "admin") {
     model = adminModel;
+    service = AdminService;
   } else if (role === "student") {
     model = studentModel;
+    service = StudentService;
   } else if (role === "teacher") {
     model = teacherModel;
+    service = TeacherService;
   } else if (role === "parent") {
     model = parentModel;
+    service = ParentService;
   }
   return async (payload) => {
     const { username, password, email, ...profile } = payload;
@@ -95,7 +102,7 @@ function signUp(role) {
     if (!account) {
       throw new BadRequestError("Error in created account!");
     }
-    const ob = model
+    const ob = service
       .create({
         ...profile,
         accountId: account._id,
