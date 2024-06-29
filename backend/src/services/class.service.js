@@ -11,6 +11,7 @@ const {
   checkConflictStudentEnroll,
   checkConflictAddTeacherToLesson,
 } = require("./lesson.service");
+const ClassRepo = require("../models/repo/class.repo");
 // const StudentService = require("./student.service");
 class ClassService {
   static async create({
