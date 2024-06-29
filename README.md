@@ -21,15 +21,13 @@ Thành viên nhóm:
 
 - SDKs .NET 6.0: Cần tải SDKs .NET 6.0 từ trang chính thức của microsoft (https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-6.0.31-windows-x64-installer).
 
-- MongoDB: Tải Mongo từ trang chính thức của MongoDB (https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.11-signed.msi).
-
 - NodeJs: Cần tải Node.js từ trang chính thức (https://nodejs.org/en). Quá trình cài đặt sẽ cung cấp Node.js runtime và npm (Node Package Manager).
 
 Môi trường phát triển (IDE): Có thể dùng bất kỳ môi trường phát triển tích hợp nào như Visual Studio Code, WebStorm hoặc Atom. Trong trường hợp này ta sẽ sử dụng Visual Studio Code.
 
 Cài đặt extension C# Dev Kit vào Visual Studio Code.
 
-Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm install(nếu lỗi thiếu thư viện thì lại nhập vô) - Nhập npm start -> enter (hoặc sử dụng yarn start - nên dùng yarn) - Sau khi tiến trình kết thúc nếu có thư mục node_modules tức là đã cài thành công.
+Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm install(Câu lệnh để tải thư viện) - Nhập npm start -> enter (hoặc sử dụng yarn start - nên dùng yarn) - Sau khi tiến trình kết thúc nếu có thư mục node_modules tức là đã cài thành công.
 
 # Cấu trúc dự án:
 
@@ -42,15 +40,15 @@ Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm inst
 
 *Back-end
 - Thư mục configs: Chứa các file cài đặt
-- Thư mục controllers: 
-- Thư mục core:
-- Thư mục dbs:
-- Thư mục helpers:
-- Thư mục middlewares:
-- Thư mục models:
-- Thư mục routes:
-- Thư mục services:
-- Thư mục utils:
+- Thư mục controllers: Chứa các tệp điều khiển (controllers) quản lý luồng dữ liệu giữa client và server.
+- Thư mục core: Chứa các đối tượng Error và Success được custom
+- Thư mục dbs: Chứa các file connect.
+- Thư mục helpers: Chứa các tệp trợ giúp (helpers) chứa các hàm tiện ích có thể được sử dụng lại trong toàn bộ ứng dụng.
+- Thư mục middlewares: Chứa các tệp trung gian (middlewares) để xử lý các yêu cầu HTTP trước khi chúng được chuyển đến controllers.
+- Thư mục models:Chứa các tệp mô hình (models) đại diện cho cấu trúc dữ liệu và tương tác với cơ sở dữ liệu.
+- Thư mục routes: Chứa các tệp định tuyến (routes) xác định các điểm cuối (endpoints) của ứng dụng và ánh xạ chúng tới các controllers tương ứng.
+- Thư mục services: Chứa các tệp dịch vụ (services) cung cấp các logic kinh doanh và các chức năng liên quan đến nghiệp vụ.
+- Thư mục utils:Chứa các tệp tiện ích bao gồm các hàm dùng chung trong toàn bộ ứng dụng.
 
 # Một số framework làm front-end:
 
