@@ -89,28 +89,7 @@ class ClassService {
     return classes;
   }
   static async findByStudent({ studentId }) {
-    const classes = await classModel
-      .find({ students: studentId })
-      .select(" -__v -createdAt -updatedAt -id")
-      .populate({
-        path: "lesson",
-        model: lessonModel,
-        select: "topic teacherId isFinished attendance",
-      })
-      .lean();
-    const rs = classes.map((item) => {
-      item.totalLesson = item?.lesson.length || 0;
-      item.registeredStudents = item?.students.length || 0;
-      item.statusClasses = item.status;
-      item.statusRegister =
-        item.students.findIndex((id) => {
-          return id.toString() === studentId;
-        }) > -1
-          ? true
-          : false;
-      return _.omit(item, ["lesson", "status"]);
-    });
-    return rs;
+    return await ClassRepo.findByStudent({ studentId });
   }
   static async findLessonByTeacherAndClass({ classId, teacherId }) {
     const lesson = await lessonModel.find({ teacherId, classId }).lean();

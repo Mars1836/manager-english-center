@@ -6,7 +6,8 @@ const lessonModel = require("../models/lesson.model");
 const tuitionModel = require("../models/tuition.model");
 const { BadRequestError } = require("../core/error.reponse");
 const studentModel = require("../models/student.model");
-const ClassService = require("./class.service");
+const ClassRepo = require("../models/repo/class.repo");
+const StudentRepo = require("../models/repo/student.repo");
 class StudentService {
   static async findAll() {
     const students = await studentModel.find();
@@ -39,7 +40,7 @@ class StudentService {
     return students;
   }
   static async getStatusV3({ studentId }) {
-    const classes = await ClassService.findByStudent({ studentId });
+    const classes = await ClassRepo.findByStudent({ studentId });
     const classIds = classes.map((item) => toObjectId(item._id));
     const tuition = await tuitionModel.find({ studentId });
     const tuitionOb = tuition.reduce((acc, cur) => {
@@ -95,7 +96,7 @@ class StudentService {
     return a;
   }
   static async getStatusV2({ studentId }) {
-    const classes = await ClassService.findByStudent({ studentId });
+    const classes = await ClassRepo.findByStudent({ studentId });
     console.log(classes);
     const classIds = classes.map((item) => toObjectId(item._id));
     const classesOb = classes.reduce((acc, cur) => {
@@ -233,33 +234,7 @@ class StudentService {
     return student;
   }
   static async getSchedule({ studentId }) {
-    const classes = await classModel
-      .find({
-        students: studentId,
-      })
-      .lean();
-    const classMap = classes.map((i) => {
-      return;
-    });
-    const classIds = classes.map((i) => {
-      return i._id;
-    });
-    const lesson = await lessonModel
-      .find({
-        classId: {
-          $in: classIds,
-        },
-      })
-      .select("-createdAt -updatedAt -__v -attendance")
-      .populate("teacherId")
-      .populate("classId")
-      .lean();
-    const rs = lesson.map((item) => {
-      item.name = item.classId.name;
-      item.teacher = item.teacherId.name;
-      return _.omit(item, ["teacherId", "classId"]);
-    });
-    return rs;
+    return await StudentRepo.getSchedule({ studentId });
   }
   static async getTuition({ studentId }) {
     const tuition = await tuitionModel.find({
