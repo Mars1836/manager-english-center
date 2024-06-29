@@ -25,13 +25,13 @@ class ParentService {
   static async create({ name, accountId, dob, gender, studentId }) {
     const student = await studentModel.findById(studentId);
     if (!student) {
-      throw BadRequestError("Student Id is not valid!");
+      throw new BadRequestError("Student Id is not valid!");
     }
     const o = await parentModel.findOne({
       studentId,
     });
     if (o) {
-      throw BadRequestError(
+      throw new BadRequestError(
         "This student already has a parent-managed account!!"
       );
     }
