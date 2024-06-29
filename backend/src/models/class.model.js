@@ -27,7 +27,7 @@ var classSchema = new mongoose.Schema(
     },
     students: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: "student",
+      ref: "Student",
       default: [],
     },
     status: {

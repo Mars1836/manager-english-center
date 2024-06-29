@@ -34,6 +34,7 @@ classRouter.get(
   asyncHandle(ClassCtrl.findLessonByTeacherAndClass)
 );
 classRouter.patch("/attendance", asyncHandle(ClassCtrl.attendance));
+classRouter.get("/attendance", asyncHandle(ClassCtrl.getAttendance));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
 
