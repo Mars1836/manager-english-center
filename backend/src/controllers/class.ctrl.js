@@ -40,7 +40,7 @@ class ClassCtrl {
     }).send(res);
   }
   static async findByStudent(req, res, next) {
-    const { studentId } = req.query;
+    const studentId = req.auth.student.id;
 
     const metadata = await ClassService.findByStudent({ studentId });
     return new SuccessRespone({
