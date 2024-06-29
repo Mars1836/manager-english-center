@@ -42,7 +42,7 @@ class ParentService {
       gender,
       studentId,
     });
-    return teacher;
+    return parent;
   }
   static async getInfor({ id }) {
     const teacher = await parentModel.findOne({ _id: id });
