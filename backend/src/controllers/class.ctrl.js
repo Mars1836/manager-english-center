@@ -121,5 +121,15 @@ class ClassCtrl {
       metadata,
     }).send(res);
   }
+  static async getAttendance(req, res, next) {
+    const { lessonId } = req.query;
+    const metadata = await ClassService.getAttendance({
+      lessonId,
+    });
+    return new CreateSuccess({
+      message: "Update success",
+      metadata,
+    }).send(res);
+  }
 }
 module.exports = ClassCtrl;

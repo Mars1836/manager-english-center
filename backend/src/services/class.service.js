@@ -128,6 +128,39 @@ class ClassService {
     });
     return rs;
   }
+  static async getAttendance({ lessonId }) {
+    const lesson = await lessonModel.findById(lessonId);
+    if (!lesson) {
+      throw new BadRequestError("This lesson does not exist");
+    }
+    if (!lesson.isFinished) {
+      throw new BadRequestError(
+        "Attendance has not been taken for this class yet."
+      );
+    }
+    const _class = await classModel.findById(lesson.classId);
+    if (!_class) {
+      throw new BadRequestError("This class does not exist");
+    }
+    const student = await studentModel
+      .find({ _id: { $in: _class.students } })
+      .lean();
+    const a = student.map((item) => {
+      const id = item._id.toString();
+      const index = lesson.absent.findIndex((ab) => {
+        return ab.toString() === id;
+      });
+      let isAbsent = false;
+      if (index > -1) {
+        isAbsent = true;
+      }
+      return {
+        ...item,
+        isAbsent,
+      };
+    });
+    return a;
+  }
   static async attendance({ lessonId, classId, studentAbsent, teacherId }) {
     const _class = await classModel.findById(classId);
     if (!_class) {
