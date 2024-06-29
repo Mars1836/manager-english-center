@@ -1,4 +1,6 @@
+const { BadRequestError } = require("../core/error.reponse");
 const parentModel = require("../models/parent.model");
+const studentModel = require("../models/student.model");
 const { removeUnvalueField } = require("../utils");
 
 class ParentService {
@@ -20,12 +22,25 @@ class ParentService {
     });
     return parents;
   }
-  static async create({ name, accountId, dob, gender }) {
-    const teacher = await parentModel.create({
+  static async create({ name, accountId, dob, gender, studentId }) {
+    const student = await studentModel.findById(studentId);
+    if (!student) {
+      throw BadRequestError("Student Id is not valid!");
+    }
+    const o = await parentModel.findOne({
+      studentId,
+    });
+    if (o) {
+      throw BadRequestError(
+        "This student already has a parent-managed account!!"
+      );
+    }
+    const parent = await parentModel.create({
       name,
       accountId,
       dob,
       gender,
+      studentId,
     });
     return teacher;
   }
