@@ -8,7 +8,6 @@ const { BadRequestError } = require("../core/error.reponse");
 const adminModel = require("../models/admin.model");
 const AdminService = require("./admin.service");
 const teacherModel = require("../models/teacher.model");
-const { model } = require("mongoose");
 const parentModel = require("../models/parent.model");
 
 function login(role) {
@@ -81,25 +80,20 @@ function signUp(role) {
   }
   return async (payload) => {
     const { username, password, email, ...profile } = payload;
+    if (role === "admin") {
+      console.log({ username, password, email });
+    }
     const hashPassword = await bcrypt.hash(password, AccessService.hash);
+
     const account = await accountModel.create({
       username: payload.username,
       password: hashPassword,
       email: payload.email,
       role: role,
     });
+
     if (!account) {
       throw new BadRequestError("Error in created account!");
-    }
-
-    if (role === "admin") {
-      model = adminModel;
-    } else if (role === "student") {
-      model = studentModel;
-    } else if (role === "teacher") {
-      model = teacherModel;
-    } else if (role === "parent") {
-      model = parentModel;
     }
     const ob = model
       .create({

@@ -111,7 +111,11 @@ class ClassCtrl {
     }).send(res);
   }
   static async attendance(req, res, next) {
-    const metadata = await ClassService.attendance(req.body);
+    const teacherId = req.auth.teacher.id;
+    const metadata = await ClassService.attendance({
+      ...req.body,
+      teacherId,
+    });
     return new CreateSuccess({
       message: "Update success",
       metadata,
