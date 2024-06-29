@@ -68,7 +68,7 @@ Các bước cài đặt: - Clone repo về máy - Mở terminal nhập npm inst
 Có thể chạy trên Visual Studio hoặc Visual Studio Code. Trong trường hợp này ta dùng Visual Studio Code
 
 *Chạy phần back-end:
-- Bước 1: Mở thư mục backend (Chứa thư mục node_modules và src).
+- Bước 1: Mở thư mục backend (Chứa thư mục src).
 - Bước 2: Chạy lệnh: npm i.
 - Bước 3: Chạy lệnh npm start.
 
