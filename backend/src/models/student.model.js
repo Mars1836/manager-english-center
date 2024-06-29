@@ -12,6 +12,7 @@ var studentSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       required: true,
       unique: true,
+      sparse: true,
     },
     dob: {
       type: Date,
