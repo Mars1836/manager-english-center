@@ -128,38 +128,54 @@ class ClassService {
     });
     return rs;
   }
-  static async getAttendance({ lessonId }) {
-    const lesson = await lessonModel.findById(lessonId);
-    if (!lesson) {
-      throw new BadRequestError("This lesson does not exist");
-    }
-    if (!lesson.isFinished) {
-      throw new BadRequestError(
-        "Attendance has not been taken for this class yet."
-      );
-    }
-    const _class = await classModel.findById(lesson.classId);
+  static async getAttendance({ classId }) {
+    // const lesson = await lessonModel.findById(lessonId);
+    // if (!lesson) {
+    //   throw new BadRequestError("This lesson does not exist");
+    // }
+    // if (!lesson.isFinished) {
+    //   throw new BadRequestError(
+    //     "Attendance has not been taken for this class yet."
+    //   );
+    // }
+    const _class = await classModel
+      .findById(classId)
+      .populate({
+        path: "lesson",
+        model: lessonModel,
+        select: "topic teacherId isFinished absent endTime startTime",
+      })
+      .populate("students")
+      .lean();
     if (!_class) {
       throw new BadRequestError("This class does not exist");
     }
-    const student = await studentModel
-      .find({ _id: { $in: _class.students } })
-      .lean();
-    const a = student.map((item) => {
-      const id = item._id.toString();
-      const index = lesson.absent.findIndex((ab) => {
-        return ab.toString() === id;
+    const b = _class.lesson.map((ls) => {
+      const sts = _class.students.map((st) => {
+        let isAbsent;
+        if (!ls.isFinished) {
+          isAbsent = false;
+        } else {
+          isAbsent =
+            ls.absent.findIndex((ab) => {
+              return ab.toString() === st._id.toString();
+            }) > -1
+              ? true
+              : false;
+        }
+
+        return {
+          ...st,
+          isAbsent,
+        };
       });
-      let isAbsent = false;
-      if (index > -1) {
-        isAbsent = true;
-      }
       return {
-        ...item,
-        isAbsent,
+        ...ls,
+        students: sts,
       };
     });
-    return a;
+
+    return b;
   }
   static async attendance({ lessonId, classId, studentAbsent, teacherId }) {
     const _class = await classModel.findById(classId);
@@ -195,6 +211,12 @@ class ClassService {
     const _class = await classModel.findById(classId);
     if (!_class) {
       throw new BadRequestError("Class provided does not exist");
+    }
+    if (classStore.status === "close") {
+      throw new BadRequestError("Class has closed");
+    }
+    if (classStore.status === "end") {
+      throw new BadRequestError("Class has ended");
     }
     if (checkConflictAddTeacherToLesson({ teacherId, ls })) {
       throw new BadRequestError(
@@ -241,6 +263,12 @@ class ClassService {
     }
     if (!studentStore) {
       throw new BadRequestError("Student does not exist.");
+    }
+    if (classStore.status === "close") {
+      throw new BadRequestError("Class has closed");
+    }
+    if (classStore.status === "end") {
+      throw new BadRequestError("class has ended");
     }
     let check = await checkConflictStudentEnroll({ studentId, classId });
     if (check) {

@@ -122,9 +122,9 @@ class ClassCtrl {
     }).send(res);
   }
   static async getAttendance(req, res, next) {
-    const { lessonId } = req.query;
+    const { classId } = req.query;
     const metadata = await ClassService.getAttendance({
-      lessonId,
+      classId,
     });
     return new CreateSuccess({
       message: "Update success",
