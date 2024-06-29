@@ -22,8 +22,11 @@ classRouter.post("/", asyncHandle(ClassCtrl.create));
 classRouter.post("/add-lesson", asyncHandle(ClassCtrl.addLesson));
 classRouter.post("/set-status", asyncHandle(ClassCtrl.setStatus));
 classRouter.get("/lesson", asyncHandle(ClassCtrl.findLessonsByClass));
-classRouter.get("/student", asyncHandle(ClassCtrl.findByStudent));
-classRouter.get("/parent", asyncHandle(ClassCtrl.findByParent));
+classRouter.get(
+  "/student",
+  asyncHandle(verifyAsStudent),
+  asyncHandle(ClassCtrl.findByStudent)
+);
 classRouter.get("/teacher", asyncHandle(ClassCtrl.findByTeacher));
 classRouter.get("/check-conflict", asyncHandle(ClassCtrl.checkConflict));
 classRouter.get(

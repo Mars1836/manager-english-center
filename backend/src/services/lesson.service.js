@@ -34,7 +34,6 @@ function check(a1, a2) {
       }
     }
   });
-
   return a.length > 0;
 }
 function isTimeOverlap(start1, end1, start2, end2) {

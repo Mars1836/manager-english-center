@@ -207,7 +207,8 @@ class ClassService {
     if (!studentStore) {
       throw new BadRequestError("Student does not exist.");
     }
-    if (checkConflictStudentEnroll({ studentId, classId })) {
+    let check = await checkConflictStudentEnroll({ studentId, classId });
+    if (check) {
       throw new BadRequestError(
         "Unable to register for class due to scheduling conflicts."
       );
