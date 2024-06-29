@@ -128,12 +128,11 @@ class ClassService {
     });
     return rs;
   }
-  static async attendance({ lessonId, classId, studentAbsent }) {
+  static async attendance({ lessonId, classId, studentAbsent, teacherId }) {
     const _class = await classModel.findById(classId);
     if (!_class) {
       throw new BadRequestError("This class does not exist");
     }
-
     studentAbsent.forEach((st) => {
       if (!_class.students.includes(st)) {
         throw new BadRequestError("This student is not in class");
@@ -152,6 +151,9 @@ class ClassService {
     const udrs = await lessonModel.findOneAndUpdate(query, update, options);
     if (!udrs) {
       throw new BadRequestError("Attendance failed!");
+    }
+    if (udrs.studentId.toString() !== teacherId) {
+      throw new BadRequestError("Teacher id is not valid!");
     }
     return udrs;
   }

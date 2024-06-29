@@ -7,7 +7,6 @@ const AdminCtrl = require("../controllers/admin.ctrl");
 const adminRouter = express.Router();
 // adminRouter.post("/search", asyncHandle(StudentCtrl.));
 adminRouter.get("/", asyncHandle(AdminCtrl.getByQuery));
-adminRouter.get("/", asyncHandle(AdminCtrl.getByQuery));
 adminRouter.get(
   "/infor",
   asyncHandle(verifyAsAdmin),

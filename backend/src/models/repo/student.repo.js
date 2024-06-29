@@ -27,7 +27,8 @@ class StudentRepo {
     const rs = lesson.map((item) => {
       item.name = item.classId.name;
       item.teacher = item.teacherId.name;
-      return _.omit(item, ["teacherId", "classId"]);
+      item.classId = item.classId._id;
+      return _.omit(item, ["teacherId"]);
     });
     return rs;
   }
