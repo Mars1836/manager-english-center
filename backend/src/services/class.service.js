@@ -169,13 +169,14 @@ class ClassService {
           isAbsent,
         };
       });
+
       return {
         ...ls,
         students: sts,
       };
     });
 
-    return b;
+    return { lesson: b, studentList: _class.students };
   }
   static async attendance({ lessonId, classId, studentAbsent, teacherId }) {
     const _class = await classModel.findById(classId);
