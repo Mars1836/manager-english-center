@@ -13,6 +13,7 @@ var parentSchema = new mongoose.Schema(
       required: true,
       unique: true,
       sparse: true,
+      ref: "Account",
     },
     studentId: {
       type: mongoose.Schema.Types.ObjectId,

@@ -13,6 +13,11 @@ classRouter.post(
   asyncHandle(verifyAsStudent),
   asyncHandle(ClassCtrl.studentEnroll)
 );
+classRouter.post(
+  "/student-cancel",
+  asyncHandle(verifyAsStudent),
+  asyncHandle(ClassCtrl.studentCancel)
+);
 classRouter.get(
   "/absentlesson/student",
   asyncHandle(verifyAsParentOrStudent),

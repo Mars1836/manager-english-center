@@ -110,6 +110,18 @@ class ClassCtrl {
       metadata,
     }).send(res);
   }
+  static async studentCancel(req, res, next) {
+    const studentId = req.auth.student.id;
+    const metadata = await ClassService.studentCancel(
+      // { studentId: req.auth.student.id },
+      { studentId },
+      req.body
+    );
+    return new CreateSuccess({
+      message: "Cancel class successfull.",
+      metadata,
+    }).send(res);
+  }
   static async attendance(req, res, next) {
     const teacherId = req.auth.teacher.id;
     const metadata = await ClassService.attendance({

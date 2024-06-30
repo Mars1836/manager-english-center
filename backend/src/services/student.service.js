@@ -162,7 +162,7 @@ class StudentService {
         ...map,
         ...status,
       };
-      return _.omit(i1, ["year"]);
+      return i1;
     });
     return classHandle;
   }
