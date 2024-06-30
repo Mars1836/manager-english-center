@@ -218,7 +218,11 @@ class ClassService {
     if (_class.status === "end") {
       throw new BadRequestError("Class has ended");
     }
-    if (checkConflictAddTeacherToLesson({ teacherId, ls })) {
+    const check = await checkConflictAddTeacherToLesson({
+      teacherId,
+      lesson: ls,
+    });
+    if (check) {
       throw new BadRequestError(
         "Unable to add teacher to this lesson due to scheduling conflicts"
       );
