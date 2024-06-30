@@ -6,6 +6,7 @@ const ClassCtrl = require("../controllers/class.ctrl");
 const {
   verifyAsStudent,
   verifyAsParentOrStudent,
+  verifyAsAdmin,
 } = require("../middlewares/verifyToken");
 const classRouter = express.Router();
 classRouter.post(
@@ -42,5 +43,10 @@ classRouter.patch("/attendance", asyncHandle(ClassCtrl.attendance));
 classRouter.get("/attendance", asyncHandle(ClassCtrl.getAttendance));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
+classRouter.delete(
+  "/",
+  asyncHandle(verifyAsAdmin),
+  asyncHandle(ClassCtrl.delete)
+);
 
 module.exports = classRouter;

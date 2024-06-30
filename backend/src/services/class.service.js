@@ -260,6 +260,10 @@ class ClassService {
       .lean();
     return classes;
   }
+  static async delete({ classId }) {
+    const class_ = await classModel.deleteOne({ _id: classId });
+    return class_;
+  }
   static async checkConflict({ studentId, classId }) {
     const lesson = await StudentService.getSchedule({ studentId });
     const lesson2 = await lessonModel.find({ classId });

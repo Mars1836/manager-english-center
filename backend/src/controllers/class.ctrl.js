@@ -3,6 +3,14 @@ const ClassService = require("../services/class.service");
 const LessonService = require("../services/lesson.service");
 
 class ClassCtrl {
+  static async delete(req, res, next) {
+    const { classId } = req.body;
+    const metadata = await ClassService.delete({ classId });
+    return new SuccessRespone({
+      message: "Remove class success",
+      metadata,
+    }).send(res);
+  }
   static async checkConflict(req, res, next) {
     console.log(req.query);
     const { classId, studentId } = req.query;
