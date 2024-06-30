@@ -13,6 +13,7 @@ var adminSchema = new mongoose.Schema(
       required: true,
       unique: true,
       sparse: true,
+      ref: "Account",
     },
   },
   {

@@ -17,6 +17,7 @@ var teacherScheme = new mongoose.Schema(
       required: true,
       unique: true,
       sparse: true,
+      ref: "Account",
     },
     dob: {
       type: Date,
