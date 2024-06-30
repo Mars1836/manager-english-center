@@ -20,7 +20,7 @@ var teacherScheme = new mongoose.Schema(
       ref: "Account",
     },
     dob: {
-      type: Date,
+      type: String,
     },
     gender: {
       type: String,
@@ -40,6 +40,10 @@ var teacherScheme = new mongoose.Schema(
     },
     dateOflastPaid: {
       type: Date,
+    },
+    address: {
+      type: String,
+      default: "",
     },
   },
   {

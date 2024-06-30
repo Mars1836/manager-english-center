@@ -1,5 +1,5 @@
 const { removeUnvalueField } = require("../utils");
-
+const _ = require("lodash");
 const adminModel = require("../models/admin.model");
 class AdminService {
   static async getAll() {
@@ -20,8 +20,15 @@ class AdminService {
     return admin;
   }
   static async getInfor({ id }) {
-    const admin = await adminModel.findOne({ _id: id });
-    return admin;
+    const admin = await adminModel
+      .findOne({ _id: id })
+      .populate("accountId")
+      .lean();
+    admin.email = admin.accountId.email;
+    if (!admin.address === null || admin.address === undefined) {
+      admin.address = "";
+    }
+    return _.omit(admin, ["accountId"]);
   }
 }
 module.exports = AdminService;

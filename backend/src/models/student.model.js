@@ -13,9 +13,10 @@ var studentSchema = new mongoose.Schema(
       required: true,
       unique: true,
       sparse: true,
+      ref: "Account",
     },
     dob: {
-      type: Date,
+      type: String,
     },
     gender: {
       type: String,
@@ -24,6 +25,10 @@ var studentSchema = new mongoose.Schema(
     discount: {
       type: Number,
       default: 0,
+    },
+    address: {
+      type: String,
+      default: "",
     },
   },
   {

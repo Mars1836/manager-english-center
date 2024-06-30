@@ -2,7 +2,7 @@ const { BadRequestError } = require("../core/error.reponse");
 const parentModel = require("../models/parent.model");
 const studentModel = require("../models/student.model");
 const { removeUnvalueField } = require("../utils");
-
+const _ = require("lodash");
 class ParentService {
   static async findAll() {
     const parents = await parentModel.find();
@@ -45,8 +45,15 @@ class ParentService {
     return parent;
   }
   static async getInfor({ id }) {
-    const teacher = await parentModel.findOne({ _id: id });
-    return teacher;
+    const parent = await parentModel
+      .findOne({ _id: id })
+      .populate("accountId")
+      .lean();
+    parent.email = parent.accountId.email;
+    if (!parent.address === null || parent.address === undefined) {
+      parent.address = "";
+    }
+    return _.omit(parent, ["accountId"]);
   }
 }
 module.exports = ParentService;

@@ -1,7 +1,7 @@
 const teacherModel = require("../models/teacher.model");
 const lessonModel = require("../models/lesson.model");
 const { removeUnvalueField } = require("../utils");
-
+const _ = require("lodash");
 class TeacherService {
   static async findAll() {
     const teachers = await teacherModel.find().lean();
@@ -43,8 +43,15 @@ class TeacherService {
     return teacher;
   }
   static async getInfor({ id }) {
-    const teacher = await teacherModel.findOne({ _id: id });
-    return teacher;
+    const teacher = await teacherModel
+      .findOne({ _id: id })
+      .populate("accountId")
+      .lean();
+    teacher.email = teacher.accountId.email;
+    if (!teacher.address === null || teacher.address === undefined) {
+      teacher.address = "";
+    }
+    return _.omit(teacher, ["accountId"]);
   }
 }
 module.exports = TeacherService;
