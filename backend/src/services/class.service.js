@@ -247,8 +247,9 @@ class ClassService {
       const data = {
         ...ls,
         teacher: ls.teacherId.name,
+        teacherId: ls.teacherId._id,
       };
-      return _.omit(data, ["teacherId"]);
+      return data;
     });
     return r;
   }
