@@ -302,5 +302,35 @@ class ClassService {
       return nClass;
     }
   }
+  static async studentCancel({ studentId }, { classId }) {
+    const classStore = await classModel.findById(classId).lean();
+    const studentStore = await studentModel.findById(studentId).lean();
+    if (!classStore) {
+      throw new BadRequestError("Class does not exist.");
+    }
+    if (!studentStore) {
+      throw new BadRequestError("Student does not exist.");
+    }
+    const index = classStore.students.findIndex((item) => {
+      return item.toString() === studentId;
+    });
+    if (index === -1) {
+      throw new BadRequestError("Student is not in this class.");
+    }
+    const query = {
+      _id: classId,
+    };
+    const update = {
+      $pull: {
+        students: studentId,
+      },
+    };
+    const option = {
+      new: true,
+    };
+
+    const nClass = await classModel.findOneAndUpdate(query, update, option);
+    return nClass;
+  }
 }
 module.exports = ClassService;
