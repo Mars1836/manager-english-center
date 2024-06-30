@@ -66,10 +66,10 @@ class ClassCtrl {
     }).send(res);
   }
   static async findByTeacher(req, res, next) {
-    const { teacherId } = req.query;
+    const teacherId = req.auth.teacher.id;
     const metadata = await ClassService.findByTeacher({ teacherId });
     return new SuccessRespone({
-      message: "Get all class by parent success",
+      message: "Get all class by teacher success",
       metadata,
     }).send(res);
   }

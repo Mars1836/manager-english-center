@@ -7,6 +7,7 @@ const {
   verifyAsStudent,
   verifyAsParentOrStudent,
   verifyAsAdmin,
+  verifyAsTeacher,
 } = require("../middlewares/verifyToken");
 const classRouter = express.Router();
 classRouter.post(
@@ -33,7 +34,11 @@ classRouter.get(
   asyncHandle(verifyAsStudent),
   asyncHandle(ClassCtrl.findByStudent)
 );
-classRouter.get("/teacher", asyncHandle(ClassCtrl.findByTeacher));
+classRouter.get(
+  "/teacher",
+  asyncHandle(verifyAsTeacher),
+  asyncHandle(ClassCtrl.findByTeacher)
+);
 classRouter.get("/check-conflict", asyncHandle(ClassCtrl.checkConflict));
 classRouter.get(
   "/lesson/teacher",
