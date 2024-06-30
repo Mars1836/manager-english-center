@@ -212,10 +212,10 @@ class ClassService {
     if (!_class) {
       throw new BadRequestError("Class provided does not exist");
     }
-    if (classStore.status === "close") {
+    if (_class.status === "close") {
       throw new BadRequestError("Class has closed");
     }
-    if (classStore.status === "end") {
+    if (_class.status === "end") {
       throw new BadRequestError("Class has ended");
     }
     if (checkConflictAddTeacherToLesson({ teacherId, ls })) {
