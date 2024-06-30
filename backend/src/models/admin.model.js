@@ -15,6 +15,9 @@ var adminSchema = new mongoose.Schema(
       sparse: true,
       ref: "Account",
     },
+    address: {
+      type: String,
+    },
   },
   {
     collection: COLLECTION_NAME,
