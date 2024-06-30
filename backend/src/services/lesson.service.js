@@ -15,7 +15,7 @@ class LessonService {
     return check(a, b);
   }
   static async checkConflictAddTeacherToLesson({ teacherId, lesson }) {
-    const a = await TeacherService.getSchedule({ studentId });
+    const a = await TeacherService.getSchedule({ teacherId });
     return check(a, [lesson]);
   }
 }
