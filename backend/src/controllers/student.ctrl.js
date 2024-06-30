@@ -15,6 +15,15 @@ class StudentCtrl {
       metadata: students,
     }).send(res);
   }
+  static async setDiscount(req, res, next) {
+    const { studentId, discount } = req.body;
+    const metadata = await StudentService.setDiscount({ studentId, discount });
+    // res.json(students);
+    return new SuccessRespone({
+      message: "Set student discount success",
+      metadata,
+    }).send(res);
+  }
   static async findByClass(req, res, next) {
     const { classId } = req.query;
     const students = await StudentService.findByClass({ classId }, req.query);

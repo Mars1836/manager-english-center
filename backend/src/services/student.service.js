@@ -9,6 +9,35 @@ const studentModel = require("../models/student.model");
 const ClassRepo = require("../models/repo/class.repo");
 const StudentRepo = require("../models/repo/student.repo");
 class StudentService {
+  static async setDiscount({ studentId, discount }) {
+    const tuition = await tuitionModel.updateMany(
+      { studentId, isFinish: false, paid: 0 },
+      [
+        {
+          $set: {
+            last_cost: {
+              $subtract: [
+                "$original_cost",
+                { $multiply: ["$original_cost", { $divide: [discount, 100] }] },
+              ],
+            },
+            discount: discount,
+          },
+        },
+      ]
+    );
+    const newTuition = await tuitionModel.find({ studentId });
+    const student = await studentModel.findOneAndUpdate(
+      { _id: studentId },
+      { discount: discount },
+      {
+        new: true,
+      }
+    );
+
+    tuitionModel.fin;
+    return { tuition: newTuition, student };
+  }
   static async findAll() {
     const students = await studentModel.find();
     return students;

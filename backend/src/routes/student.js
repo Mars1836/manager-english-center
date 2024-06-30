@@ -30,11 +30,13 @@ studentRouter.get(
   asyncHandle(verifyAsParentOrStudent),
   asyncHandle(StudentCtrl.getTuition)
 );
+
 studentRouter.get(
   "/infor",
   asyncHandle(verifyAsStudent),
   asyncHandle(StudentCtrl.getInfor)
 );
+studentRouter.post("/set-discount", asyncHandle(StudentCtrl.setDiscount));
 studentRouter.get("/", asyncHandle(StudentCtrl.findByQuery));
 
 module.exports = studentRouter;
