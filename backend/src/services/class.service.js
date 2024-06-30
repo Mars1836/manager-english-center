@@ -317,6 +317,12 @@ class ClassService {
     if (index === -1) {
       throw new BadRequestError("Student is not in this class.");
     }
+    if (classStore.status === "close") {
+      throw new BadRequestError("Class has closed");
+    }
+    if (classStore.status === "end") {
+      throw new BadRequestError("class has ended");
+    }
     const query = {
       _id: classId,
     };
@@ -330,6 +336,7 @@ class ClassService {
     };
 
     const nClass = await classModel.findOneAndUpdate(query, update, option);
+    await tuitionModel.deleteMany({ studentId, classId });
     return nClass;
   }
 }
