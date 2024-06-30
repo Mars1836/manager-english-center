@@ -15,13 +15,13 @@ class ParentCtrl {
     }).send(res);
   }
   static async getInfor(req, res, next) {
-    if (!req?.auth?.teacher) {
-      return new Error("This requess requires authentication");
+    if (!req?.auth?.parent) {
+      return new Error("This request requires authentication");
     }
-    const student = await ParentService.getInfor({ id: req.auth.student.id });
+    const parent = await ParentService.getInfor({ id: req.auth.parent.id });
     return new SuccessRespone({
       message: "Get infor success!",
-      metadata: student,
+      metadata: parent,
     }).send(res);
   }
 }

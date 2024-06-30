@@ -230,8 +230,15 @@ class StudentService {
     return student;
   }
   static async getInfor({ id }) {
-    const student = await teacherModel.findOne({ _id: id });
-    return student;
+    const student = await studentModel
+      .findOne({ _id: id })
+      .populate("accountId")
+      .lean();
+    student.email = student.accountId.email;
+    if (!student.address === null || student.address === undefined) {
+      student.address = "";
+    }
+    return _.omit(student, ["accountId"]);
   }
   static async getSchedule({ studentId }) {
     return await StudentRepo.getSchedule({ studentId });

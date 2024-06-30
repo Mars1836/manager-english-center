@@ -23,11 +23,15 @@ var parentSchema = new mongoose.Schema(
       sparse: true,
     },
     dob: {
-      type: Date,
+      type: String,
     },
     gender: {
       type: String,
       enum: ["male", "female"],
+    },
+    address: {
+      type: String,
+      default: "",
     },
   },
   {

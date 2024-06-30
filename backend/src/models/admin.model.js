@@ -17,6 +17,14 @@ var adminSchema = new mongoose.Schema(
     },
     address: {
       type: String,
+      default: "",
+    },
+    gender: {
+      type: String,
+      enum: ["male", "female"],
+    },
+    dob: {
+      type: String,
     },
   },
   {

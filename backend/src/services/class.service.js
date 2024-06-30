@@ -233,10 +233,20 @@ class ClassService {
     return lesson;
   }
   static async findLessonsByClass({ classId }) {
-    const lessons = await lessonModel.find({
-      classId,
+    const lessons = await lessonModel
+      .find({
+        classId,
+      })
+      .populate("teacherId")
+      .lean();
+    const r = lessons.map((ls) => {
+      const data = {
+        ...ls,
+        teacher: ls.teacherId.name,
+      };
+      return _.omit(data, ["teacherId"]);
     });
-    return lessons;
+    return r;
   }
   static async findAll() {
     const classes = await classModel

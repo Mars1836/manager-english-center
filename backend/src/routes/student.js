@@ -32,7 +32,7 @@ studentRouter.get(
 );
 studentRouter.get(
   "/infor",
-  asyncHandle(verifyAsParentOrStudent),
+  asyncHandle(verifyAsStudent),
   asyncHandle(StudentCtrl.getInfor)
 );
 studentRouter.get("/", asyncHandle(StudentCtrl.findByQuery));
