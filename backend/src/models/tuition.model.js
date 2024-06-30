@@ -42,12 +42,6 @@ var tuitionSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-tuitionSchema.pre("save", function (next) {
-  if (this.isModified("original_cost") || this.isModified("discount")) {
-    this.last_cost =
-      this.original_cost - this.original_cost * (this.discount / 100);
-  }
-  next();
-});
+
 //Export the model
 module.exports = mongoose.model(DOCUMENT_NAME, tuitionSchema);
