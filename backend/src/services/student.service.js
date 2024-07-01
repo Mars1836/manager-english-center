@@ -117,22 +117,22 @@ class StudentService {
         ...item,
         ...classesOb[item._id],
         totalLesson: classesOb[item._id]?.totalLesson || 0,
-        tuition: tuitionOb[item._id.toString()].last_cost,
-        paid: tuitionOb[item._id.toString()].paid,
+        tuition: tuitionOb[item._id.toString()]?.last_cost,
+        paid: tuitionOb[item._id.toString()]?.paid,
       };
       return _.omit(ob, ["lesson"]);
     });
     return a;
   }
   static async getStatusV2({ studentId }) {
-    const classes = await ClassRepo.findByStudent({ studentId });
-    console.log(classes);
+    const classes = await ClassRepo.findByStudent({ studentId, map: true });
     const classIds = classes.map((item) => toObjectId(item._id));
     const classesOb = classes.reduce((acc, cur) => {
       acc[cur._id.toString()] = cur;
       return acc;
     }, {});
     const tuitions = await tuitionModel.find({ studentId });
+    console.log(tuitions);
     const tuitionRe = tuitions.reduce((acc, cur) => {
       acc[cur.classId.toString()] = cur;
       return acc;
@@ -168,8 +168,8 @@ class StudentService {
     const a = rs.map((item) => {
       let ob = {
         ...item,
-        tuition: tuitionRe[item._id.toString()].last_cost,
-        paid: tuitionRe[item._id.toString()].paid,
+        tuition: tuitionRe[item._id.toString()]?.last_cost,
+        paid: tuitionRe[item._id.toString()]?.paid,
       };
       return _.omit(ob, ["lesson"]);
     });
@@ -183,8 +183,8 @@ class StudentService {
         learned: 0,
       };
       const map = {
-        tuition: tuitionRe[item._id.toString()].last_cost,
-        paid: tuitionRe[item._id.toString()].paid,
+        tuition: tuitionRe[item._id.toString()]?.last_cost,
+        paid: tuitionRe[item._id.toString()]?.paid,
       };
       const i1 = {
         ...item,

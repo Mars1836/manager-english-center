@@ -19,9 +19,11 @@ const verify = (roles) => {
     //   throw new UnauthorizedError("This action require authentication!");
     // }
     const decode = jwt.verify(accessToken, key);
+    console.log("decodedecodedecode", decode);
     const token = await tokenModel.findOne({
       objectId: decode._id,
     });
+
     if (!token) {
       throw new UnauthorizedError("Authenticate failed!");
     }
