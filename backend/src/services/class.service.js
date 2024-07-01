@@ -91,7 +91,7 @@ class ClassService {
   }
   static async findByStudent({ studentId }) {
     const a = await ClassRepo.findByStudent({ studentId });
-    return { a, id: studentId };
+    return a;
   }
   static async findLessonByTeacherAndClass({ classId, teacherId }) {
     const lesson = await lessonModel.find({ teacherId, classId }).lean();
