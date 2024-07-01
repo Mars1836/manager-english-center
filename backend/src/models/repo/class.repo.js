@@ -5,7 +5,7 @@ const _ = require("lodash");
 class ClassRepo {
   static async findByStudent({ studentId }) {
     const classes = await classModel
-      .find({ students: studentId })
+      .find()
       .select(" -__v -createdAt -updatedAt -id")
       .populate({
         path: "lesson",
