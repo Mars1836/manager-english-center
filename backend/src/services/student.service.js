@@ -50,7 +50,6 @@ class StudentService {
   }
   static async findByQuery(query, options) {
     removeUnvalueField(query);
-    console.log(query);
     const students = await studentModel.find({
       ...query,
     });
@@ -76,7 +75,6 @@ class StudentService {
       acc[cur.classId.toString()] = cur;
       return acc;
     }, {});
-    console.log("tuition", tuitionOb);
 
     const classesOb = classes.reduce((acc, cur) => {
       acc[cur._id.toString()] = cur;
@@ -112,7 +110,6 @@ class StudentService {
       },
     ]);
     const a = rs.map((item) => {
-      console.log(item._id);
       let ob = {
         ...item,
         ...classesOb[item._id],
@@ -126,17 +123,19 @@ class StudentService {
   }
   static async getStatusV2({ studentId }) {
     const classes = await ClassRepo.findByStudent({ studentId, map: true });
+
     const classIds = classes.map((item) => toObjectId(item._id));
     const classesOb = classes.reduce((acc, cur) => {
       acc[cur._id.toString()] = cur;
       return acc;
     }, {});
+    console.log(classIds);
     const tuitions = await tuitionModel.find({ studentId });
-    console.log(tuitions);
     const tuitionRe = tuitions.reduce((acc, cur) => {
       acc[cur.classId.toString()] = cur;
       return acc;
     }, {});
+    console.log(tuitionRe);
     const rs = await lessonModel.aggregate([
       {
         $match: { classId: { $in: classIds }, isFinished: true },
