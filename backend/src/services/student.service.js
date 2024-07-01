@@ -169,6 +169,7 @@ class StudentService {
         ...item,
         tuition: tuitionRe[item._id.toString()]?.last_cost,
         paid: tuitionRe[item._id.toString()]?.paid,
+        originalTuition: tuitionRe[item._id.toString()]?.original_cost,
       };
       return _.omit(ob, ["lesson"]);
     });
@@ -183,6 +184,7 @@ class StudentService {
       };
       const map = {
         tuition: tuitionRe[item._id.toString()]?.last_cost,
+        originalTuition: tuitionRe[item._id.toString()]?.original_cost,
         paid: tuitionRe[item._id.toString()]?.paid,
       };
       const i1 = {
