@@ -25,9 +25,21 @@ classRouter.get(
   asyncHandle(verifyAsParentOrStudent),
   asyncHandle(ClassCtrl.getAbsentLesson)
 );
-classRouter.post("/", asyncHandle(ClassCtrl.create));
-classRouter.post("/add-lesson", asyncHandle(ClassCtrl.addLesson));
-classRouter.post("/set-status", asyncHandle(ClassCtrl.setStatus));
+classRouter.post(
+  "/",
+  asyncHandle(verifyAsAdmin),
+  asyncHandle(ClassCtrl.create)
+);
+classRouter.post(
+  "/add-lesson",
+  asyncHandle(verifyAsAdmin),
+  asyncHandle(ClassCtrl.addLesson)
+);
+classRouter.post(
+  "/set-status",
+  asyncHandle(verifyAsAdmin),
+  asyncHandle(ClassCtrl.setStatus)
+);
 classRouter.get("/lesson", asyncHandle(ClassCtrl.findLessonsByClass));
 classRouter.get(
   "/student",
