@@ -4,16 +4,18 @@ const { removeUnvalueField } = require("../utils");
 const _ = require("lodash");
 class TeacherService {
   static async findAll() {
-    const teachers = await teacherModel.find().lean();
-    teachers.map((tc) => {
+    const teachers = await teacherModel.find().populate("accountId").lean();
+    const t = teachers.map((tc) => {
       if (!tc.dateOflastPaid) {
         tc.isPaid = false;
       } else {
         tc.isPaid = tc.dateOflastPaid.getMonth() === new Date().getMonth();
       }
-      return tc;
+      tc.email = tc.accountId.email;
+      const rs = tc;
+      return _.omit(rs, ["accountId"]);
     });
-    return teachers;
+    return t;
   }
   static async findById(id) {
     const student = await teacherModel.findOne({
