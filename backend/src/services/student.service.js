@@ -50,10 +50,20 @@ class StudentService {
   }
   static async findByQuery(query, options) {
     removeUnvalueField(query);
-    const students = await studentModel.find({
-      ...query,
+    const students = await studentModel
+      .find({
+        ...query,
+      })
+      .populate("accountId")
+      .lean();
+    const studentMap = students.map((item) => {
+      const re = {
+        email: item.accountId.email,
+        ...item,
+      };
+      return _.omit(re, ["accountId"]);
     });
-    return students;
+    return studentMap;
   }
   static async findByClass({ classId }, options) {
     const classStore = await classModel.findById(classId);
