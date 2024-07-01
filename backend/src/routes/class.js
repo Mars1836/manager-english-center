@@ -60,6 +60,6 @@ classRouter.patch("/attendance", asyncHandle(ClassCtrl.attendance));
 classRouter.get("/attendance", asyncHandle(ClassCtrl.getAttendance));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
 classRouter.get("/", asyncHandle(ClassCtrl.findAll));
-classRouter.delete("/", asyncHandle(ClassCtrl.delete));
+classRouter.post("/delete", asyncHandle(ClassCtrl.delete));
 
 module.exports = classRouter;
